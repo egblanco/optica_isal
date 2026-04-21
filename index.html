@@ -473,7 +473,7 @@
             btn.disabled = true;
 
             const { error } = await db.from('pedidos').insert([{
-                cliente: nom, telefono: tel, modelo: p.m, tipo_mica: p.t.join(", "), graduacion: p.g, estado: 'Pendiente', referencia: refer
+                cliente: nom, telefono: tel, modelo: p.m, tipo_mica: p.t.join(", "), graduacion: p.g, estado: 'Pendiente'
             }]);
 
             if(!error) { 
@@ -500,7 +500,6 @@
                 telefono: document.getElementById('ct').value,
                 fecha: document.getElementById('cf').value,
                 hora: document.getElementById('ch').value,
-                referencia: refer_c,
                 estado: 'Pendiente'
             }]);
             if(!error) alert("¡Cita Agendada!"); else alert(error.message);
