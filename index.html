@@ -272,16 +272,6 @@
             <form id="fCita">
                 <div class="form-group"><input type="text" id="cn" required placeholder="Nombre Completo"></div>
                 <div class="form-group"><input type="tel" id="ct" required placeholder="WhatsApp / Teléfono"></div>
-                <div class="form-group">
-                    <select id="referral_c" required>
-                        <option value="">¿Cómo te enteraste de nosotros?</option>
-                        <option value="Facebook">Facebook</option>
-                        <option value="Instagram">Instagram</option>
-                        <option value="TikTok">TikTok</option>
-                        <option value="Recomendacion">Recomendación</option>
-                        <option value="Pase por aqui">Pasé por la tienda</option>
-                    </select>
-                </div>
                 <div class="form-group" style="display:flex; gap:1rem;">
                     <input type="date" id="cf" required>
                     <select id="ch" required>
@@ -360,16 +350,6 @@
                     <h4>Finalizar</h4>
                     <div class="form-group"><input type="text" id="oN" placeholder="Tu Nombre"></div>
                     <div class="form-group"><input type="tel" id="oT" placeholder="WhatsApp"></div>
-                    <div class="form-group">
-                        <select id="referral_o" required>
-                            <option value="">¿Cómo te enteraste de nosotros?</option>
-                            <option value="Facebook">Facebook</option>
-                            <option value="Instagram">Instagram</option>
-                            <option value="TikTok">TikTok</option>
-                            <option value="Recomendacion">Recomendación</option>
-                            <option value="Pase por aqui">Pasé por la tienda</option>
-                        </select>
-                    </div>
                 </div>
                 <!-- Paso 5: Éxito y Ubicación -->
                 <div class="wizard-step" id="ws5">
@@ -466,8 +446,7 @@
         async function saveOrder() {
             const nom = document.getElementById('oN').value;
             const tel = document.getElementById('oT').value;
-            const refer = document.getElementById('referral_o').value;
-            if(!nom || !tel || !refer) { alert("Por favor completa todos los campos del paso final."); return; }
+            if(!nom || !tel) { alert("Por favor completa tu nombre y teléfono."); return; }
             const btn = document.getElementById('btnN');
             const originalText = btn.innerText;
             btn.innerText = "Enviando...";
@@ -494,7 +473,6 @@
         document.getElementById('fCita').onsubmit = async (e) => {
             e.preventDefault();
             const btn = e.target.querySelector('button');
-            const refer_c = document.getElementById('referral_c').value;
             btn.innerText = "Guardando...";
             const { error } = await db.from('citas').insert([{
                 nombre: document.getElementById('cn').value,
