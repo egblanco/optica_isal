@@ -10,6 +10,7 @@
             --bg-secondary: #f9f9fb;
             --border-color: rgba(0, 0, 0, 0.08);
             --accent-gold: #bd901c;
+            --accent-gold-hover: #967215;
             --accent-gold-light: rgba(189, 144, 28, 0.1);
             --text-primary: #121212;
             --text-secondary: #5a5a65;
@@ -27,18 +28,25 @@
         .navbar { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 1.5rem 0; transition: 0.3s; }
         .navbar.scrolled { background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); padding: 0.8rem 0; border-bottom: 1px solid var(--border-color); }
         .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 5%; }
-        .logo img { height: 70px; width: auto; }
+        .logo img { height: 75px; width: auto; object-fit: contain; }
         .nav-links { display: flex; gap: 2rem; align-items: center; list-style: none; }
         .nav-links a { text-decoration: none; color: var(--text-primary); font-weight: 500; font-size: 0.9rem; }
         
+        /* Hero */
+        .hero { height: 90vh; background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.4)), url('https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; display: flex; align-items: center; justify-content: center; text-align: center; flex-direction: column; }
+        .hero h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 1rem; }
+        .hero h1 span { color: var(--accent-gold); font-style: italic; }
+
         /* Buttons */
-        .btn-primary { background: var(--accent-gold); color: white; padding: 0.9rem 2rem; border-radius: 50px; border: none; cursor: pointer; font-weight: 600; text-decoration: none; display: inline-block; }
-        .btn-secondary { background: white; border: 1px solid var(--border-color); padding: 0.9rem 2rem; border-radius: 50px; cursor: pointer; text-decoration: none; display: inline-block; }
+        .btn-primary { background: var(--accent-gold); color: white; padding: 1rem 2.5rem; border-radius: 50px; border: none; cursor: pointer; font-weight: 600; text-decoration: none; display: inline-block; transition: 0.3s; }
+        .btn-primary:hover { background: var(--accent-gold-hover); transform: translateY(-2px); }
+        .btn-secondary { background: white; border: 1px solid var(--border-color); padding: 1rem 2.5rem; border-radius: 50px; cursor: pointer; text-decoration: none; display: inline-block; transition: 0.3s; }
 
         /* Catalog */
         .catalog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .product-card { border-radius: 20px; overflow: hidden; border: 1px solid var(--border-color); cursor: pointer; transition: 0.3s; }
-        .product-card img { width: 100%; height: 250px; object-fit: cover; }
+        .product-card { border-radius: 20px; overflow: hidden; border: 1px solid var(--border-color); cursor: pointer; transition: 0.3s; background: white; }
+        .product-card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .product-card img { width: 100%; height: 300px; object-fit: cover; }
         .product-info { padding: 1.5rem; text-align: center; }
 
         /* Modal Wizard */
@@ -46,22 +54,16 @@
         .modal-content { background: white; width: 95%; max-width: 650px; border-radius: 30px; padding: 2.5rem; position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.1); max-height: 90vh; overflow-y: auto; }
         .wizard-step { display: none; }
         .wizard-step.active { display: block; animation: fadeIn 0.4s ease; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
         .option-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
         .option-card { border: 1px solid var(--border-color); padding: 1.5rem; border-radius: 15px; cursor: pointer; text-align: center; transition: 0.2s; }
         .option-card.selected { border-color: var(--accent-gold); background: var(--accent-gold-light); }
-        .option-card img { width: 100%; height: 100px; object-fit: cover; border-radius: 10px; margin-bottom: 0.5rem; }
+        .product-mini-img { width: 100%; height: 120px; object-fit: cover; border-radius: 10px; margin-bottom: 0.5rem; }
 
         .form-group { margin-bottom: 1.2rem; }
         input, select, textarea { width: 100%; padding: 0.9rem; border-radius: 12px; border: 1px solid #ddd; background: #fafafa; font-family: inherit; }
         
-        .apt-section { background: var(--bg-secondary); padding: 4rem; border-radius: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2rem; }
-
-        @media (max-width: 768px) {
-            .apt-section { grid-template-columns: 1fr; padding: 2rem; }
-            .option-grid { grid-template-columns: 1fr; }
-        }
+        .apt-section { background: var(--bg-secondary); padding: 4rem; border-radius: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; border: 1px solid var(--border-color); }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
@@ -73,86 +75,98 @@
             <ul class="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#catalogo">Catálogo</a></li>
-                <li><button onclick="openW()" class="btn-primary" style="padding: 0.5rem 1.5rem;">Pedir Lentes</button></li>
+                <li><button onclick="openW()" class="btn-primary" style="padding: 0.5rem 1.5rem;">Cita Online</button></li>
             </ul>
         </div>
     </nav>
 
-    <header id="inicio" style="height: 80vh; background: #eee; display: flex; align-items: center; justify-content: center; text-align: center; flex-direction: column;">
-        <h1 style="font-size: 3.5rem;">Óptica Isal</h1>
-        <p>Tu visión es nuestra prioridad</p><br>
-        <button onclick="openW()" class="btn-primary">EMPEZAR PEDIDO</button>
+    <header id="inicio" class="hero">
+        <div class="container" style="position: relative; z-index: 1;">
+            <h1>Óptica Isal<br><span>Tu Visión, Nuestra Pasión.</span></h1>
+            <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 2rem;">Vuelve a ver el mundo con claridad y estilo con nuestras colecciones exclusivas.</p>
+            <button onclick="openW()" class="btn-primary">PERSONALIZAR LENTES</button>
+        </div>
     </header>
 
     <section id="catalogo" class="container section-padding">
-        <h2 style="text-align: center; margin-bottom: 3rem;">Nuestras Colecciones</h2>
+        <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2.5rem;">Explora nuestra Colección</h2>
         <div class="catalog-grid">
             <div class="product-card" onclick="openW('Lumina Gold')">
                 <img src="https://images.unsplash.com/photo-1577803645773-f96470509666?auto=format&fit=crop&w=800&q=80">
-                <div class="product-info"><h3>Lumina Gold</h3><p>$2,450 MXN</p></div>
+                <div class="product-info"><h3>Lumina Gold</h3><p style="color:var(--accent-gold); font-weight:bold;">$2,450 MXN</p></div>
             </div>
             <div class="product-card" onclick="openW('Noir Classic')">
                 <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=80">
-                <div class="product-info"><h3>Noir Classic</h3><p>$1,890 MXN</p></div>
+                <div class="product-info"><h3>Noir Classic</h3><p style="color:var(--accent-gold); font-weight:bold;">$1,890 MXN</p></div>
             </div>
         </div>
     </section>
 
-    <!-- WIZARD MODAL -->
+    <section id="cita" class="container section-padding">
+        <div class="apt-section">
+            <div>
+                <h2 style="font-size: 2.5rem;">Agenda tu Visita</h2>
+                <p>Ven a visitarnos y obtén asesoría personalizada para elegir tus lentes ideales.</p>
+                <div style="margin-top: 2rem;">
+                    <p>🕒 Lun-Vie: 10:00 - 19:00</p>
+                    <p>🕒 Sáb: 10:00 - 15:00</p>
+                </div>
+            </div>
+            <form id="fCita">
+                <div class="form-group"><label>Tu Nombre</label><input type="text" id="nC" required></div>
+                <div class="form-group"><label>Celular / WhatsApp</label><input type="tel" id="tC" required></div>
+                <div class="form-group"><label>Fecha</label><input type="date" id="dC" required></div>
+                <button type="submit" class="btn-primary" style="width:100%;">RESERVAR CITA</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- WIZARD -->
     <div class="modal-overlay" id="mo">
         <div class="modal-content">
-            <h3 id="tW">Paso 1: Elige tu Armazón</h3>
+            <h3 id="tW">Paso 1: Armazón</h3>
             <hr style="margin: 1.5rem 0; opacity: 0.1;">
 
-            <!-- Paso 1: Modelo -->
             <div id="st1" class="wizard-step active">
                 <div class="option-grid">
                     <div class="option-card" onclick="selM('Lumina Gold', this)">
-                        <img src="https://images.unsplash.com/photo-1577803645773-f96470509666?auto=format&fit=crop&w=200&q=80">
+                        <img class="product-mini-img" src="https://images.unsplash.com/photo-1577803645773-f96470509666?auto=format&fit=crop&w=200&q=80">
                         <h5>Lumina Gold</h5>
                     </div>
                     <div class="option-card" onclick="selM('Noir Classic', this)">
-                        <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=200&q=80">
+                        <img class="product-mini-img" src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=200&q=80">
                         <h5>Noir Classic</h5>
                     </div>
                 </div>
             </div>
 
-            <!-- Paso 2: Tipo de Mica -->
             <div id="st2" class="wizard-step">
-                <p>Tipo de Mica que necesitas:</p>
+                <p>Tipo de Mica:</p>
                 <div class="option-grid">
                     <div class="option-card" onclick="selL('Monofocal', this)"><h5>Monofocal</h5></div>
                     <div class="option-card" onclick="selL('Bifocal', this)"><h5>Bifocal</h5></div>
                     <div class="option-card" onclick="selL('Progresivo', this)"><h5>Progresivo</h5></div>
-                    <div class="option-card" onclick="selL('Solo Armazón', this)"><h5>Solo Armazón</h5></div>
                 </div>
             </div>
 
-            <!-- Paso 3: Graduación -->
             <div id="st3" class="wizard-step">
                 <p>¿Tienes tu receta?</p>
                 <div class="option-grid">
-                    <div class="option-card" onclick="selG('La Tengo', this)"><h5>Sí, la tengo</h5></div>
-                    <div class="option-card" onclick="selG('Ocupo Examen', this)"><h5>No, ocupo examen</h5></div>
+                    <div class="option-card" onclick="selG('La Tengo', this)"><h5>Sí</h5></div>
+                    <div class="option-card" onclick="selG('Ocupo Examen', this)"><h5>No</h5></div>
                 </div>
-                <div id="recetaArea" style="display: none; margin-top: 1rem;">
-                    <textarea id="detalleReceta" placeholder="Escribe aquí tu graduación si la conoces..."></textarea>
-                </div>
-                <br>
-                <button onclick="go(4)" class="btn-primary" style="width: 100%;">SIGUIENTE</button>
+                <div id="recetaArea" style="display: none; margin-top: 1rem;"><textarea id="detalleReceta" placeholder="Detalles de graduación..."></textarea></div>
+                <br><button onclick="go(4)" class="btn-primary" style="width: 100%;">SIGUIENTE</button>
             </div>
 
-            <!-- Paso 4: Finalizar -->
             <div id="st4" class="wizard-step">
-                <p>Datos de contacto y entrega:</p><br>
-                <div class="form-group"><input type="text" id="nP" placeholder="Tu Nombre"></div>
-                <div class="form-group"><input type="tel" id="tP" placeholder="WhatsApp / Celular"></div>
-                <button onclick="saveP()" class="btn-primary" style="width:100%;">FINALIZAR PEDIDO</button>
+                <p>Tus Datos de Contacto:</p><br>
+                <div class="form-group"><input type="text" id="nP" placeholder="Nombre"></div>
+                <div class="form-group"><input type="tel" id="tP" placeholder="WhatsApp"></div>
+                <button onclick="saveP()" class="btn-primary" style="width:100%;">ENVIAR PEDIDO</button>
             </div>
 
-            <br>
-            <button onclick="closeW()" style="background:none; border:none; color:#888; cursor:pointer;">Cancelar</button>
+            <br><button onclick="closeW()" style="background:none; border:none; color:#888; cursor:pointer;">Cancelar</button>
         </div>
     </div>
 
@@ -164,33 +178,38 @@
         function connect() {
             if (window.supabase) {
                 client = window.supabase.createClient(U, K);
-                console.log("Supabase OK");
             }
         }
         connect();
         setInterval(() => { if(!client) connect(); }, 1000);
 
-        function openW() { document.getElementById('mo').style.display = 'flex'; }
-        function closeW() { document.getElementById('mo').style.display = 'none'; resetW(); }
+        window.onscroll = () => {
+            const nav = document.getElementById('navbar');
+            if(window.scrollY > 40) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+        };
 
-        let order = { model: "", lens: "", grad: "", detail: "" };
+        function openW() { document.getElementById('mo').style.display = 'flex'; }
+        function closeW() { document.getElementById('mo').style.display = 'none'; }
+
+        let o = { m: "", l: "", g: "" };
 
         function selM(m, el) {
-            order.model = m;
+            o.m = m;
             document.querySelectorAll('#st1 .option-card').forEach(x => x.classList.remove('selected'));
             el.classList.add('selected');
             go(2);
         }
 
         function selL(l, el) {
-            order.lens = l;
+            o.l = l;
             document.querySelectorAll('#st2 .option-card').forEach(x => x.classList.remove('selected'));
             el.classList.add('selected');
             go(3);
         }
 
         function selG(g, el) {
-            order.grad = g;
+            o.g = g;
             document.querySelectorAll('#st3 .option-card').forEach(x => x.classList.remove('selected'));
             el.classList.add('selected');
             document.getElementById('recetaArea').style.display = (g === 'La Tengo') ? 'block' : 'none';
@@ -199,14 +218,8 @@
         function go(s) {
             document.querySelectorAll('.wizard-step').forEach(x => x.classList.remove('active'));
             document.getElementById('st' + s).classList.add('active');
-            const titles = ["", "Modelo", "Tipo de Mica", "Graduación", "Finalizar"];
+            const titles = ["", "Modelo", "Mica", "Graduación", "Finalizar"];
             document.getElementById('tW').innerText = "Paso " + s + ": " + titles[s];
-        }
-
-        function resetW() {
-            go(1);
-            order = { model: "", lens: "", grad: "", detail: "" };
-            document.querySelectorAll('.option-card').forEach(x => x.classList.remove('selected'));
         }
 
         async function saveP() {
@@ -214,23 +227,32 @@
             const t = document.getElementById('tP').value;
             if(!n || !t) { alert("Llena tus datos"); return; }
             if(!client) { alert("Conectando..."); return; }
-
             const btn = document.querySelector('#st4 button');
-            btn.innerText = "Guardando...";
+            btn.innerText = "Enviando...";
             const { error } = await client.from('pedidos').insert([{
-                cliente: n,
-                telefono: t,
-                modelo: order.model,
-                tipo_mica: order.lens,
-                graduacion: order.grad,
-                detalle_receta: document.getElementById('detalleReceta').value,
+                cliente: n, telefono: t, modelo: o.m, tipo_mica: o.l, graduacion: o.g,
+                detalle_receta: document.getElementById('detalleReceta').value, estado: 'Pendiente'
+            }]);
+            if(error) alert(error.message);
+            else { alert("¡Pedido guardado!"); closeW(); }
+            btn.innerText = "ENVIAR PEDIDO";
+        }
+
+        document.getElementById('fCita').onsubmit = async (e) => {
+            e.preventDefault();
+            if(!client) { alert("Cargando..."); return; }
+            const btn = e.target.querySelector('button');
+            btn.innerText = "Agendando...";
+            const { error } = await client.from('citas').insert([{ 
+                nombre: document.getElementById('nC').value, 
+                telefono: document.getElementById('tC').value, 
+                fecha: document.getElementById('dC').value, 
                 estado: 'Pendiente'
             }]);
-
             if(error) alert(error.message);
-            else { alert("¡Pedido guardado correctamente en Supabase!"); closeW(); }
-            btn.innerText = "FINALIZAR PEDIDO";
-        }
+            else { alert("Cita agendada."); e.target.reset(); }
+            btn.innerText = "RESERVAR CITA";
+        };
     </script>
 </body>
 </html>
