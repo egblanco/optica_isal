@@ -4,59 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Óptica Isal - Tu Visión, Tu Estilo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <style>
+        /* CSS Integrado de Óptica Isal */
         :root {
             --bg-primary: #ffffff;
             --bg-secondary: #f9f9fb;
+            --bg-glass: rgba(255, 255, 255, 0.85);
             --border-color: rgba(0, 0, 0, 0.08);
-            --accent-gold: #bd901c;
-            --accent-gold-light: rgba(189, 144, 28, 0.1);
             --text-primary: #121212;
+            --text-secondary: #5a5a65;
+            --accent-gold: #bd901c;
+            --accent-gold-hover: #967215;
+            --accent-gold-light: rgba(189, 144, 28, 0.15);
             --font-heading: 'Playfair Display', serif;
             --font-body: 'Inter', sans-serif;
+            --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg-primary); color: var(--text-primary); line-height: 1.6; }
-        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        body { font-family: var(--font-body); background-color: var(--bg-primary); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; }
+        h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; }
+        a { text-decoration: none; color: inherit; transition: 0.2s; }
+        ul { list-style: none; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
-        .section-padding { padding: 5rem 0; }
-        
+        .section-padding { padding: 6rem 0; }
+        .section-title { text-align: center; margin-bottom: 4rem; }
+        .section-title h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .section-title p { color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
+
         /* Navbar */
-        .navbar { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 1.5rem 0; transition: 0.3s; }
-        .navbar.scrolled { background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); padding: 0.8rem 0; border-bottom: 1px solid var(--border-color); }
+        .navbar { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 1.5rem 0; transition: var(--transition-smooth); }
+        .navbar.scrolled { padding: 1rem 0; background: var(--bg-glass); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-color); }
         .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 5%; }
         .logo img { height: 70px; width: auto; }
-        
+        .nav-links { display: flex; gap: 2.5rem; align-items: center; }
+        .nav-links li a:hover { color: var(--accent-gold); }
+
+        /* Buttons */
+        .btn-primary { background: var(--accent-gold); color: white; padding: 0.8rem 2rem; border-radius: 50px; border: none; font-weight: 500; cursor: pointer; transition: var(--transition-smooth); }
+        .btn-primary:hover { background: var(--accent-gold-hover); transform: translateY(-2px); box-shadow: 0 10px 20px rgba(189, 144, 28, 0.2); }
+        .btn-primary-outline { background: transparent; color: var(--accent-gold); border: 1px solid var(--accent-gold); padding: 0.8rem 2rem; border-radius: 50px; cursor: pointer; }
+
         /* Hero */
-        .hero { height: 90vh; background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.4)), url('https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; display: flex; align-items: center; justify-content: center; text-align: center; flex-direction: column; }
-        .hero h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1rem; }
+        .hero { position: relative; height: 100vh; display: flex; align-items: center; background-image: url('https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; }
+        .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.4) 100%); }
+        .hero-content { position: relative; z-index: 1; max-width: 650px; margin-left: 10%; }
+        .hero h1 { font-size: 4.5rem; line-height: 1.1; margin-bottom: 1.5rem; }
         .hero h1 span { color: var(--accent-gold); font-style: italic; }
 
-        .btn-primary { background: var(--accent-gold); color: white; padding: 1rem 2.5rem; border-radius: 50px; border: none; cursor: pointer; font-weight: 600; text-decoration: none; display: inline-block; transition: 0.3s; }
-        .btn-primary:hover { background: var(--accent-gold-hover); transform: translateY(-2px); }
-
         /* Catalog */
-        .catalog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .product-card { border-radius: 20px; overflow: hidden; border: 1px solid var(--border-color); cursor: pointer; transition: 0.3s; background: white; }
-        .product-card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .product-card img { width: 100%; height: 300px; object-fit: cover; }
-        .product-info { padding: 1.5rem; text-align: center; }
+        .catalog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; }
+        .product-card { background: var(--bg-secondary); border-radius: 20px; overflow: hidden; border: 1px solid var(--border-color); transition: var(--transition-smooth); cursor: pointer; }
+        .product-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .product-image { height: 300px; overflow: hidden; }
+        .product-image img { width: 100%; height: 100%; object-fit: cover; }
+        .product-info { padding: 1.5rem; }
+        .product-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; }
+        .price { font-family: var(--font-heading); color: var(--accent-gold); font-size: 1.25rem; font-weight: 600; }
 
-        /* Modal Wizard */
-        .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); backdrop-filter: blur(8px); z-index: 2000; display: none; align-items: center; justify-content: center; }
-        .modal-content { background: white; width: 95%; max-width: 700px; border-radius: 30px; padding: 2.5rem; position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.1); max-height: 90vh; overflow-y: auto; }
+        /* Appointment glass panel */
+        .glass-panel { background: rgba(255,255,255,0.7); backdrop-filter: blur(20px); border: 1px solid var(--border-color); border-radius: 30px; padding: 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+        .form-group { margin-bottom: 1.5rem; }
+        input, select, textarea { width: 100%; padding: 1rem; border-radius: 10px; border: 1px solid var(--border-color); background: var(--bg-secondary); font-family: inherit; font-size: 1rem; }
+
+        /* Wizard Modal */
+        .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); backdrop-filter: blur(8px); z-index: 2000; display: none; align-items: center; justify-content: center; opacity: 0; transition: 0.3s; }
+        .modal-overlay.active { display: flex; opacity: 1; }
+        .modal-content { background: white; width: 90%; max-width: 650px; border-radius: 25px; overflow: hidden; position: relative; max-height: 90vh; display: flex; flex-direction: column; }
+        .modal-header { padding: 2rem; border-bottom: 1px solid var(--border-color); }
+        .modal-body { padding: 2rem; overflow-y: auto; }
         .wizard-step { display: none; }
-        .wizard-step.active { display: block; animation: fadeIn 0.4s ease; }
+        .wizard-step.active { display: block; }
+        .mini-catalog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 1rem; }
+        .mini-product { background: var(--bg-secondary); border: 2px solid transparent; border-radius: 12px; padding: 0.5rem; cursor: pointer; text-align: center; }
+        .mini-product.selected { border-color: var(--accent-gold); background: var(--accent-gold-light); }
+        .mini-product img { border-radius: 8px; margin-bottom: 0.5rem; }
+        
+        .graduacion-options { display: flex; gap: 1rem; margin-bottom: 1rem; }
+        .grad-btn { flex: 1; padding: 0.8rem; border: 1px solid var(--border-color); border-radius: 10px; cursor: pointer; background: var(--bg-secondary); }
+        .grad-btn.active { background: var(--accent-gold); color: white; border-color: var(--accent-gold); }
 
-        .option-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin: 1rem 0; }
-        .option-card { border: 1px solid var(--border-color); padding: 1.2rem; border-radius: 15px; cursor: pointer; text-align: center; transition: 0.2s; }
-        .option-card.selected { border-color: var(--accent-gold); background: var(--accent-gold-light); }
-        .option-card h5 { margin: 0; font-size: 0.9rem; }
-        .product-mini-img { width: 100%; height: 100px; object-fit: cover; border-radius: 10px; margin-bottom: 0.5rem; }
+        .tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .tech-card { padding: 1rem; border: 1px solid var(--border-color); border-radius: 12px; display: flex; align-items: center; gap: 1rem; cursor: pointer; background: var(--bg-secondary); }
+        .tech-card.selected { border-color: var(--accent-gold); background: var(--accent-gold-light); }
 
-        .form-group { margin-bottom: 1.2rem; }
-        input, select, textarea { width: 100%; padding: 0.9rem; border-radius: 12px; border: 1px solid #ddd; background: #fafafa; font-family: inherit; }
+        .modal-footer { padding: 1.5rem 2rem; border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; background: var(--bg-secondary); }
+        
+        .hidden { display: none !important; }
+        .fade-up { opacity: 0; transform: translateY(30px); transition: 0.8s var(--transition-smooth); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+        /* Footer */
+        .footer { background: var(--bg-secondary); padding: 4rem 0 2rem; border-top: 1px solid var(--border-color); }
+        .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; }
+
+        @media (max-width: 992px) { .glass-panel { grid-template-columns: 1fr; padding: 2rem; } .hero h1 { font-size: 3rem; } .footer-content { grid-template-columns: 1fr; } }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
@@ -67,154 +112,227 @@
             <a href="#" class="logo"><img src="./promocion/optica isal blanco.png" alt="Óptica Isal"></a>
             <ul class="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#catalogo">Catálogo</a></li>
-                <li><button onclick="openW()" class="btn-primary" style="padding: 0.5rem 1.5rem;">Personalizar Lentes</button></li>
+                <li><a href="#catalogo">Colección</a></li>
+                <li><a href="#cita">Citas</a></li>
+                <li><button id="navWizardBtn" class="btn-primary" style="padding: 0.5rem 1.5rem;">Pedir Lente</button></li>
             </ul>
         </div>
     </nav>
 
     <header id="inicio" class="hero">
-        <div class="container">
-            <h1>Óptica Isal<br><span>Experiencia ZEISS.</span></h1>
-            <p>La mejor tecnología alemana en tus ojos.</p><br>
-            <button onclick="openW()" class="btn-primary">EMPEZAR PEDIDO PREMIUM</button>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="fade-up">Visión Clara,<br><span>Estilo Inconfundible.</span></h1>
+            <p class="fade-up">Combinamos la más alta precisión con las últimas tendencias para que veas espectacular.</p>
+            <div class="hero-buttons fade-up">
+                <button id="heroWizardBtn" class="btn-primary">Pedir Lente</button>
+                <a href="#catalogo" class="btn-primary-outline">Ver Catálogo</a>
+            </div>
         </div>
     </header>
 
-    <section id="catalogo" class="container section-padding">
-        <h2 style="text-align: center; margin-bottom: 3rem;">Colección Exclusiva</h2>
+    <section id="catalogo" class="catalog section-padding container">
+        <div class="section-title fade-up">
+            <h2>Colección Destacada</h2>
+            <p>Descubre nuestros armazones más exclusivos de temporada.</p>
+        </div>
         <div class="catalog-grid">
-            <div class="product-card" onclick="openW('Lumina Gold')">
-                <img src="https://images.unsplash.com/photo-1577803645773-f96470509666?auto=format&fit=crop&w=800&q=80">
-                <div class="product-info"><h3>Lumina Gold</h3><p>$2,450 MXN</p></div>
+            <div class="product-card fade-up">
+                <div class="product-image"><img src="https://images.unsplash.com/photo-1577803645773-f96470509666?auto=format&fit=crop&w=800&q=80"></div>
+                <div class="product-info">
+                    <h3>Titanio Pure Gold</h3>
+                    <p>Ultraligero con acabado en oro cepillado.</p>
+                    <div class="product-bottom"><span class="price">$3,450 MXN</span><button class="btn-primary" style="padding: 0.4rem 1rem;">Ver</button></div>
+                </div>
             </div>
-            <div class="product-card" onclick="openW('Noir Classic')">
-                <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=80">
-                <div class="product-info"><h3>Noir Classic</h3><p>$1,890 MXN</p></div>
+            <div class="product-card fade-up">
+                <div class="product-image"><img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=80"></div>
+                <div class="product-info">
+                    <h3>Noir Classic</h3>
+                    <p>Acetato italiano negro pulido.</p>
+                    <div class="product-bottom"><span class="price">$1,890 MXN</span><button class="btn-primary" style="padding: 0.4rem 1rem;">Ver</button></div>
+                </div>
+            </div>
+            <div class="product-card fade-up">
+                <div class="product-image"><img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=80"></div>
+                <div class="product-info">
+                    <h3>Solaris Havana</h3>
+                    <p>Protección solar completa estilo retro.</p>
+                    <div class="product-bottom"><span class="price">$2,600 MXN</span><button class="btn-primary" style="padding: 0.4rem 1rem;">Ver</button></div>
+                </div>
             </div>
         </div>
     </section>
 
+    <section id="cita" class="section-padding container">
+        <div class="glass-panel fade-up">
+            <div>
+                <h2>Agenda tu Examen</h2>
+                <p>Dedica 30 minutos a tu salud visual con nuestros expertos.</p>
+                <ul style="margin-top:2rem;">
+                    <li>✓ Equipo de última generación.</li>
+                    <li>✓ Atención personalizada.</li>
+                </ul>
+            </div>
+            <form id="fCita">
+                <div class="form-group"><input type="text" id="cn" required placeholder="Nombre Completo"></div>
+                <div class="form-group"><input type="tel" id="ct" required placeholder="WhatsApp / Teléfono"></div>
+                <div class="form-group" style="display:flex; gap:1rem;">
+                    <input type="date" id="cf" required>
+                    <select id="ch" required>
+                        <option value="10:00">10:00 AM</option>
+                        <option value="12:00">12:00 PM</option>
+                        <option value="17:00">05:00 PM</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary" style="width:100%;">Confirmar Cita</button>
+            </form>
+        </div>
+    </section>
+
     <!-- WIZARD -->
-    <div class="modal-overlay" id="mo">
+    <div class="modal-overlay" id="wM">
         <div class="modal-content">
-            <h3 id="tW">Paso 1: Armazón</h3>
-            <hr style="margin: 1.5rem 0; opacity: 0.1;">
-
-            <div id="st1" class="wizard-step active">
-                <div class="option-grid">
-                    <div class="option-card" onclick="selM('Lumina Gold', this)">
-                        <img class="product-mini-img" src="https://images.unsplash.com/photo-1577803645773-f96470509666?auto=format&fit=crop&w=200&q=80">
-                        <h5>Lumina Gold</h5>
+            <div class="modal-header">
+                <h3>Diseña tus Lentes</h3>
+                <p id="stepTitle">Paso 1: Armazón</p>
+            </div>
+            <div class="modal-body">
+                <div class="wizard-step active" id="ws1">
+                    <div class="mini-catalog-grid">
+                        <div class="mini-product" onclick="selM('Titanio Gold', 3450, this)">
+                            <img src="https://images.unsplash.com/photo-1577803645773-f96470509666?auto=format&fit=crop&w=150&q=80">
+                            <h5>Titanio Gold</h5>
+                        </div>
+                        <div class="mini-product" onclick="selM('Noir Classic', 1890, this)">
+                            <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=150&q=80">
+                            <h5>Noir Classic</h5>
+                        </div>
                     </div>
-                    <div class="option-card" onclick="selM('Noir Classic', this)">
-                        <img class="product-mini-img" src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=200&q=80">
-                        <h5>Noir Classic</h5>
+                </div>
+                <div class="wizard-step" id="ws2">
+                    <h4>Graduación</h4>
+                    <div class="graduacion-options">
+                        <div class="grad-btn" onclick="selG('Si', this)">Sí, tengo receta</div>
+                        <div class="grad-btn" onclick="selG('No', this)">No, necesito examen</div>
+                    </div>
+                    <textarea id="gD" placeholder="Notas sobre tu graduación..." class="hidden"></textarea>
+                </div>
+                <div class="wizard-step" id="ws3">
+                    <h4>Tratamientos</h4>
+                    <div class="tech-grid">
+                        <div class="tech-card" onclick="selT('Anti Blue', 500, this)"><h5>Filtro Luz Azul</h5></div>
+                        <div class="tech-card" onclick="selT('UV Protect', 300, this)"><h5>Protección UV</h5></div>
                     </div>
                 </div>
-            </div>
-
-            <div id="st2" class="wizard-step">
-                <p>Tipo de Solución / Mica (Tecnología ZEISS):</p>
-                <div class="option-grid">
-                    <div class="option-card" onclick="selL('ZEISS SmartLife', this)"><h5>SmartLife (Digital/Móvil)</h5></div>
-                    <div class="option-card" onclick="selL('ZEISS DriveSafe', this)"><h5>DriveSafe (Conducción)</h5></div>
-                    <div class="option-card" onclick="selL('ZEISS Digital', this)"><h5>Digital (Antifatiga)</h5></div>
-                    <div class="option-card" onclick="selL('ZEISS Office', this)"><h5>Office (Oficina/Pantallas)</h5></div>
-                    <div class="option-card" onclick="selL('ZEISS Progresivo', this)"><h5>Progresivo (Presbicia)</h5></div>
-                    <div class="option-card" onclick="selL('ZEISS PhotoFusion', this)"><h5>PhotoFusion (Fotocromático)</h5></div>
-                    <div class="option-card" onclick="selL('Monofocal Estándar', this)"><h5>Monofocal Básico</h5></div>
+                <div class="wizard-step" id="ws4">
+                    <h4>Finalizar</h4>
+                    <div class="form-group"><input type="text" id="oN" placeholder="Tu Nombre"></div>
+                    <div class="form-group"><input type="tel" id="oT" placeholder="WhatsApp"></div>
                 </div>
             </div>
-
-            <div id="st3" class="wizard-step">
-                <p>Detalles de Graduación:</p>
-                <div class="option-grid">
-                    <div class="option-card" onclick="selG('Tengo Receta', this)"><h5>Ya tengo mi receta</h5></div>
-                    <div class="option-card" onclick="selG('Necesito Examen', this)"><h5>Necesito Examen</h5></div>
+            <div class="modal-footer">
+                <div><span>Total Estimado:</span><br><strong id="totalW">$0 MXN</strong></div>
+                <div style="display:flex; gap:1rem;">
+                    <button id="btnP" class="btn-primary-outline hidden" onclick="step(-1)">Anterior</button>
+                    <button id="btnN" class="btn-primary" onclick="step(1)">Siguiente</button>
                 </div>
-                <div id="recetaArea" style="display: none; margin-top: 1rem;">
-                    <textarea id="detalleReceta" placeholder="Escribe aquí tu graduación o comentarios..."></textarea>
-                </div>
-                <br><button onclick="go(4)" class="btn-primary" style="width: 100%;">CONTINUAR</button>
             </div>
-
-            <div id="st4" class="wizard-step">
-                <p>Finalizar Pedido:</p><br>
-                <div class="form-group"><input type="text" id="nP" placeholder="Tu Nombre Completo"></div>
-                <div class="form-group"><input type="tel" id="tP" placeholder="WhatsApp de contacto"></div>
-                <button onclick="saveP()" class="btn-primary" style="width:100%;">ENVIAR A ÓPTICA ISAL</button>
-            </div>
-
-            <br><button onclick="closeW()" style="background:none; border:none; color:#888; cursor:pointer;">Cerrar</button>
+            <button onclick="closeW()" style="position:fixed; top:1rem; right:1rem; border:none; background:none; font-size:1.5rem; cursor:pointer;">×</button>
         </div>
     </div>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div><img src="./promocion/optica isal blanco.png" height="100"><p>Visión y Estilo de clase mundial.</p></div>
+            <div><h4>Enlaces</h4><ul><li><a href="#inicio">Inicio</a></li><li><a href="#catalogo">Catálogo</a></li></ul></div>
+            <div><h4>Contacto</h4><p>Mérida, Yucatán.</p><p>9991-23-4567</p></div>
+        </div>
+    </footer>
 
     <script>
         const U = "https://ptmrgeaogvoduqsepdef.supabase.co";
         const K = "sb_publishable_3200OWHeoZdvv9VRgsoA3w_lNGFt0pV";
-        let client;
+        const db = window.supabase ? window.supabase.createClient(U, K) : null;
 
-        function connect() {
-            if (window.supabase) client = window.supabase.createClient(U, K);
-        }
-        connect();
-        setInterval(() => { if(!client) connect(); }, 1000);
-
-        window.onscroll = () => {
+        // UI Logic
+        window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
-            if(window.scrollY > 40) nav.classList.add('scrolled');
+            if (window.scrollY > 50) nav.classList.add('scrolled');
             else nav.classList.remove('scrolled');
-        };
+        });
 
-        function openW() { document.getElementById('mo').style.display = 'flex'; }
-        function closeW() { document.getElementById('mo').style.display = 'none'; }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-        let o = { m: "", l: "", g: "" };
+        // Wizard Logic
+        let cur = 1;
+        let p = { m: "", p: 0, g: "", t: [], tp: 0 };
 
-        function selM(m, el) {
-            o.m = m;
-            document.querySelectorAll('#st1 .option-card').forEach(x => x.classList.remove('selected'));
+        function openW() { document.getElementById('wM').classList.add('active'); }
+        function closeW() { document.getElementById('wM').classList.remove('active'); }
+        document.getElementById('navWizardBtn').onclick = openW;
+        document.getElementById('heroWizardBtn').onclick = openW;
+
+        function selM(m, pr, el) { 
+            p.m = m; p.p = pr; 
+            document.querySelectorAll('.mini-product').forEach(x => x.classList.remove('selected'));
             el.classList.add('selected');
-            go(2);
+            updateTotal();
         }
-
-        function selL(l, el) {
-            o.l = l;
-            document.querySelectorAll('#st2 .option-card').forEach(x => x.classList.remove('selected'));
-            el.classList.add('selected');
-            go(3);
+        function selG(g, el) { 
+            p.g = g; 
+            document.querySelectorAll('.grad-btn').forEach(x => x.classList.remove('active'));
+            el.classList.add('active');
+            document.getElementById('gD').classList.toggle('hidden', g === 'No');
         }
-
-        function selG(g, el) {
-            o.g = g;
-            document.querySelectorAll('#st3 .option-card').forEach(x => x.classList.remove('selected'));
-            el.classList.add('selected');
-            document.getElementById('recetaArea').style.display = (g === 'Tengo Receta') ? 'block' : 'none';
+        function selT(t, pr, el) {
+            if(p.t.includes(t)) { p.t = p.t.filter(x => x !== t); p.tp -= pr; el.classList.remove('selected'); }
+            else { p.t.push(t); p.tp += pr; el.classList.add('selected'); }
+            updateTotal();
         }
+        function updateTotal() { document.getElementById('totalW').innerText = "$" + (p.p + p.tp).toLocaleString() + " MXN"; }
 
-        function go(s) {
+        function step(n) {
+            if(cur === 4 && n === 1) { saveOrder(); return; }
+            cur += n;
             document.querySelectorAll('.wizard-step').forEach(x => x.classList.remove('active'));
-            document.getElementById('st' + s).classList.add('active');
-            const titles = ["", "Modelo", "Tecnología ZEISS", "Receta", "Finalizar"];
-            document.getElementById('tW').innerText = "Paso " + s + ": " + titles[s];
+            document.getElementById('ws'+cur).classList.add('active');
+            document.getElementById('btnP').classList.toggle('hidden', cur === 1);
+            document.getElementById('btnN').innerText = cur === 4 ? "Finalizar" : "Siguiente";
+            const titles = ["", "Modelo", "Graduación", "Tratamientos", "Finalizar"];
+            document.getElementById('stepTitle').innerText = "Paso " + cur + ": " + titles[cur];
         }
 
-        async function saveP() {
-            const n = document.getElementById('nP').value;
-            const t = document.getElementById('tP').value;
-            if(!n || !t) { alert("Completa tus datos"); return; }
-            if(!client) { alert("Conectando..."); return; }
-            const btn = document.querySelector('#st4 button');
-            btn.innerText = "Guardando...";
-            const { error } = await client.from('pedidos').insert([{
-                cliente: n, telefono: t, modelo: o.m, tipo_mica: o.l, graduacion: o.g,
-                detalle_receta: document.getElementById('detalleReceta').value, estado: 'Pendiente'
+        async function saveOrder() {
+            const nom = document.getElementById('oN').value;
+            const tel = document.getElementById('oT').value;
+            if(!nom || !tel) { alert("Completa tus datos"); return; }
+            const btn = document.getElementById('btnN');
+            btn.innerText = "Enviando...";
+            const { error } = await db.from('pedidos').insert([{
+                cliente: nom, telefono: tel, modelo: p.m, tipo_mica: p.t.join(", "), graduacion: p.g, estado: 'Pendiente'
             }]);
-            if(error) alert(error.message);
-            else { alert("¡Pedido Premium Guardado!"); closeW(); }
-            btn.innerText = "ENVIAR A ÓPTICA ISAL";
+            if(!error) { alert("¡Pedido Enviado!"); closeW(); } else alert(error.message);
+            btn.innerText = "Finalizar";
         }
+
+        document.getElementById('fCita').onsubmit = async (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            btn.innerText = "Guardando...";
+            const { error } = await db.from('citas').insert([{
+                nombre: document.getElementById('cn').value,
+                telefono: document.getElementById('ct').value,
+                fecha: document.getElementById('cf').value,
+                hora: document.getElementById('ch').value,
+                estado: 'Pendiente'
+            }]);
+            if(!error) alert("¡Cita Agendada!"); else alert(error.message);
+            btn.innerText = "Confirmar Cita";
+        };
     </script>
 </body>
 </html>
