@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Óptica Isal - Tu Visión, Tu Estilo</title>
+    <meta name="description" content="Óptica Isal ofrece la mejor selección de armazones, lentes de contacto y exámenes de la vista con tecnología de punta y diseño exclusivo.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="../promocion/optica isal blanco.png" alt="Óptica Isal" style="height: 100px; width: auto;">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#catalogo">Colección</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><button id="navWizardBtn" class="btn-primary" style="padding: 0.5rem 1.5rem; font-size: 0.95rem;">Pedir Lente</button></li>
+            </ul>
+            <div class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="inicio" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="fade-up">Visión Clara,<br><span>Estilo Inconfundible.</span></h1>
+            <p class="fade-up delay-1">En Óptica Isal, combinamos la más alta precisión optométrica con las últimas tendencias en moda para que veas y te veas espectacular.</p>
+            <div class="hero-buttons fade-up delay-2">
+                <button id="heroWizardBtn" class="btn-primary">Pedir Lente</button>
+                <a href="#catalogo" class="btn-secondary">Explorar Colección</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="servicios" class="services section-padding">
+        <div class="container">
+            <div class="section-title fade-up">
+                <h2>Cuidado Premium</h2>
+                <p>Nuestros servicios están diseñados para brindarte la mejor experiencia visual.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card fade-up delay-1">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                    </div>
+                    <h3>Examen Visual Avanzado</h3>
+                    <p>Evaluación computarizada para una graduación exacta, detectando a tiempo cualquier anomalía.</p>
+                </div>
+                <div class="service-card fade-up delay-2">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20"></path><path d="m17 5-5-3-5 3"></path><path d="m17 19-5 3-5-3"></path><path d="M2 12h20"></path></svg>
+                    </div>
+                    <h3>Lentes de Contacto</h3>
+                    <p>Adaptación profesional de lentes de uso diario, mensual o cosméticos. Comodidad garantizada.</p>
+                </div>
+                <div class="service-card fade-up delay-3">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <h3>Protección UV & Filtros</h3>
+                    <p>Gafas de sol y tratamientos especiales (antirreflejante, luz azul) para cuidar tus ojos de pantallas y el sol.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catalog Section -->
+    <section id="catalogo" class="catalog section-padding">
+        <div class="container">
+            <div class="section-title fade-up">
+                <h2>Colección Destacada</h2>
+                <p>Descubre nuestros armazones más exclusivos. Variedad de estilos que resaltan tu personalidad.</p>
+            </div>
+            
+            <div class="catalog-grid">
+                <!-- Product 1 -->
+                <div class="product-card fade-up">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1577803645773-f96470509666?auto=format&fit=crop&w=800&q=80" alt="Armazón Moderno">
+                        <div class="product-badge">Nuevo</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Lumina Gold</h3>
+                        <p class="product-desc">Metal ultraligero con acabado dorado brillante.</p>
+                        <div class="product-bottom">
+                            <span class="price">$2,450 MXN</span>
+                            <button class="btn-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card fade-up delay-1">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=80" alt="Armazón Vintage">
+                    </div>
+                    <div class="product-info">
+                        <h3>Noir Classic</h3>
+                        <p class="product-desc">Acetato negro intenso, estilo retro de pasta gruesa.</p>
+                        <div class="product-bottom">
+                            <span class="price">$1,890 MXN</span>
+                            <button class="btn-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card fade-up delay-2">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1589642589332-6aeb55476d05?auto=format&fit=crop&w=800&q=80" alt="Gafas de Sol">
+                    </div>
+                    <div class="product-info">
+                        <h3>Solaris Havana</h3>
+                        <p class="product-desc">Protección UV400, patrón carey de alta definición.</p>
+                        <div class="product-bottom">
+                            <span class="price">$3,100 MXN</span>
+                            <button class="btn-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card fade-up">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=800&q=80" alt="Armazón Transparente">
+                    </div>
+                    <div class="product-info">
+                        <h3>Crystal Clear</h3>
+                        <p class="product-desc">Acetato transparente minimalista y súper ligero.</p>
+                        <div class="product-bottom">
+                            <span class="price">$1,550 MXN</span>
+                            <button class="btn-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card fade-up delay-1">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=800&q=80" alt="Armazón Metálico">
+                        <div class="product-badge">Popular</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Aura Silver</h3>
+                        <p class="product-desc">Líneas finas de titanio color plata, elegancia total.</p>
+                        <div class="product-bottom">
+                            <span class="price">$2,800 MXN</span>
+                            <button class="btn-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card fade-up delay-2">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1625591342279-3dc912aace4b?auto=format&fit=crop&w=800&q=80" alt="Armazón Aviador">
+                    </div>
+                    <div class="product-info">
+                        <h3>Maverick Pro</h3>
+                        <p class="product-desc">Estilo aviador rediseñado con lentes fotocromáticos.</p>
+                        <div class="product-bottom">
+                            <span class="price">$3,450 MXN</span>
+                            <button class="btn-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="catalog-action">
+                <a href="#" class="btn-primary-outline">Ver todo el catálogo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <section id="cita" class="appointment section-padding">
+        <div class="container">
+            <div class="appointment-wrapper glass-panel fade-up">
+                <div class="appointment-content">
+                    <h2>Agenda tu Examen Visual</h2>
+                    <p>Dedica 30 minutos a tu salud. Nuestro equipo de optometristas certificados te está esperando para darte un servicio de clase mundial.</p>
+                    
+                    <ul class="appointment-benefits">
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"></path></svg> Equipo de última generación.</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"></path></svg> Atención personalizada y sin prisas.</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"></path></svg> Descuento en armazones el día de tu cita.</li>
+                    </ul>
+                </div>
+                
+                <div class="appointment-form-container">
+                    <form id="appointmentForm" class="appointment-form" action="https://formsubmit.co/egblanco.betasoft@gmail.com" method="POST">
+                        <!-- Redirección personalizada después de enviar -->
+                        <input type="hidden" name="_next" value="https://google.com"> <!-- Puedes cambiar esto por tu dominio final -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_subject" value="Nueva Cita Agendada - Óptica Isal">
+
+                        <div class="form-group">
+                            <label for="name">Nombre Completo</label>
+                            <input type="text" id="name" name="Nombre" required placeholder="Tu nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono</label>
+                            <input type="tel" id="phone" name="Telefono" required placeholder="Tu número celular">
+                        </div>
+                        <div class="form-group row">
+                            <div class="col">
+                                <label for="date">Fecha</label>
+                                <input type="date" id="date" name="Fecha" required>
+                            </div>
+                            <div class="col">
+                                <label for="time">Hora</label>
+                                <select id="time" name="Hora" required>
+                                    <option value="" disabled selected>Selecciona</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="12:00">12:00 PM</option>
+                                    <option value="16:00">4:00 PM</option>
+                                    <option value="17:00">5:00 PM</option>
+                                    <option value="18:00">6:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-primary full-width">Confirmar Reserva</button>
+                    </form>
+                    <div id="formSuccess" class="form-success hidden">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"></path></svg>
+                        <h3>Cita Confirmada</h3>
+                        <p>Te hemos enviado un mensaje con los detalles. ¡Te esperamos!</p>
+                        <button class="btn-primary-outline" id="resetForm">Agendar otra cita</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                     <img src="../promocion/optica isal blanco.png" alt="Óptica Isal" style="height: 140px; width: auto;">
+                </a>
+                <p>Innovación visual, diseño exclusivo y cuidado excepcional para tus ojos.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Enlaces</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#catalogo">Catálogo</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#cita">Citas</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p><a href="https://www.google.com/maps/place/%C3%93ptica+ISAL/@20.995471,-89.6500049,17z/data=!3m1!4b1!4m6!3m5!1s0x8f56736e0650c8e3:0x2c4aea173d38a120!8m2!3d20.995471!4d-89.6474353!16s%2Fg%2F11fp8r3skb?entry=ttu&g_ep=EgoyMDI2MDQxNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="text-decoration: underline; color: inherit;">Av. Principal #123, Colonia Centro (Ver Mapa)</a></p>
+                <p>Tel: (555) 123-4567</p>
+                <p>contacto@opticaisal.com</p>
+                <div class="social-links">
+                    <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                    <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Óptica Isal. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Wizard de Configuración de Lentes -->
+    <div class="modal-overlay" id="wizardModal">
+        <div class="modal-content wizard-content">
+            <button class="modal-close" id="closeWizard">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <div class="modal-header">
+                <h3>Crea tus Lentes Ideales</h3>
+                <div class="wizard-progress">
+                    <span class="step-indicator active" data-step="1">1. Modelo</span>
+                    <span class="step-indicator" data-step="2">2. Graduación</span>
+                    <span class="step-indicator" data-step="3">3. Tecnología</span>
+                    <span class="step-indicator" data-step="4">4. Resumen</span>
+                </div>
+            </div>
+            
+            <div class="modal-body">
+                <!-- Paso 1: Modelo -->
+                <div class="wizard-step active" id="wizardStep1">
+                    <h4>Selecciona tu Armazón</h4>
+                    <div class="mini-catalog-grid">
+                        <div class="mini-product" data-name="Lumina Gold" data-price="2450">
+                            <img src="https://images.unsplash.com/photo-1577803645773-f96470509666?auto=format&fit=crop&w=200&q=80" alt="Lumina Gold">
+                            <div class="mp-info">
+                                <h5>Lumina Gold</h5>
+                                <span>$2,450 MXN</span>
+                            </div>
+                        </div>
+                        <div class="mini-product" data-name="Noir Classic" data-price="1890">
+                            <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=200&q=80" alt="Noir Classic">
+                            <div class="mp-info">
+                                <h5>Noir Classic</h5>
+                                <span>$1,890 MXN</span>
+                            </div>
+                        </div>
+                        <div class="mini-product" data-name="Solaris Havana" data-price="3100">
+                            <img src="https://images.unsplash.com/photo-1589642589332-6aeb55476d05?auto=format&fit=crop&w=200&q=80" alt="Solaris">
+                            <div class="mp-info">
+                                <h5>Solaris Havana</h5>
+                                <span>$3,100 MXN</span>
+                            </div>
+                        </div>
+                        <div class="mini-product" data-name="Crystal Clear" data-price="1550">
+                            <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=200&q=80" alt="Crystal">
+                            <div class="mp-info">
+                                <h5>Crystal Clear</h5>
+                                <span>$1,550 MXN</span>
+                            </div>
+                        </div>
+                        <div class="mini-product" data-name="Aura Silver" data-price="2800">
+                            <img src="https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=200&q=80" alt="Aura">
+                            <div class="mp-info">
+                                <h5>Aura Silver</h5>
+                                <span>$2,800 MXN</span>
+                            </div>
+                        </div>
+                        <div class="mini-product" data-name="Maverick Pro" data-price="3450">
+                            <img src="https://images.unsplash.com/photo-1625591342279-3dc912aace4b?auto=format&fit=crop&w=200&q=80" alt="Maverick">
+                            <div class="mp-info">
+                                <h5>Maverick Pro</h5>
+                                <span>$3,450 MXN</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 2: Graduación -->
+                <div class="wizard-step hidden" id="wizardStep2">
+                    <h4>¿Conoces tu graduación?</h4>
+                    <div class="graduacion-options">
+                        <button type="button" class="grad-btn" data-type="si">Sí, tengo mi receta</button>
+                        <button type="button" class="grad-btn" data-type="no">No, necesito examen</button>
+                    </div>
+                    
+                    <div id="graduacionSi" class="graduacion-detail hidden">
+                        <label>Escribe aquí tu graduación o tus notas:</label>
+                        <textarea id="gradText" placeholder="Ej. Ojo Derecho: Esf -1.00, Cil -0.50, Eje 180..."></textarea>
+                    </div>
+                    
+                    <div id="graduacionNo" class="graduacion-detail alert-info hidden">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                        <p>No te preocupes. Termina de configurar tus lentes y luego agenda tu cita con nosotros para el examen visual.</p>
+                    </div>
+                </div>
+
+                <!-- Paso 3: Tecnologías / Tratamientos -->
+                <div class="wizard-step hidden" id="wizardStep3">
+                    <h4>Añade Tratamientos</h4>
+                    <div class="tech-grid">
+                        <div class="tech-card" data-price="200" data-name="Protección UV">
+                            <div class="tech-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></div>
+                            <div class="tech-info">
+                                <h5>Protección UV</h5>
+                                <span>+$200 MXN</span>
+                            </div>
+                        </div>
+                        <div class="tech-card" data-price="500" data-name="Filtro Luz Azul">
+                            <div class="tech-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg></div>
+                            <div class="tech-info">
+                                <h5>Filtro Luz Azul</h5>
+                                <span>+$500 MXN</span>
+                            </div>
+                        </div>
+                        <div class="tech-card" data-price="300" data-name="Antirreflejante">
+                            <div class="tech-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+                            <div class="tech-info">
+                                <h5>Antirreflejante</h5>
+                                <span>+$300 MXN</span>
+                            </div>
+                        </div>
+                        <div class="tech-card" data-price="800" data-name="Fotocromático">
+                            <div class="tech-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12A10 10 0 0 0 12 2v10Z"></path><path d="M12 22A10 10 0 1 1 22 12Z"></path></svg></div>
+                            <div class="tech-info">
+                                <h5>Fotocromático</h5>
+                                <span>+$800 MXN</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 4: Resumen -->
+                <div class="wizard-step hidden" id="wizardStep4">
+                    <h4>Resumen de tu Pedido</h4>
+                    <div class="summary-box">
+                        <div class="summary-item">
+                            <span>Modelo: <strong id="sumModelo">-</strong></span>
+                            <span id="sumModeloPrice">$0</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Graduación: <strong id="sumGrad">-</strong></span>
+                            <span>Incluida / Examen</span>
+                        </div>
+                        <div class="summary-item" id="sumTechContainer">
+                            <span>Tratamientos:</span>
+                            <ul id="sumTechList" style="margin-left:1rem;color:var(--text-secondary);font-size:0.9rem;"></ul>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1.5rem;">
+                        <div class="form-group" style="margin-bottom: 1rem;">
+                            <label for="orderName">Tu Nombre Completo</label>
+                            <input type="text" id="orderName" required placeholder="Para armar tu pedido..." style="padding: 0.75rem;">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 0;">
+                            <label for="orderPhone">Teléfono o WhatsApp</label>
+                            <input type="tel" id="orderPhone" required placeholder="Para contactarte..." style="padding: 0.75rem;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer wizard-footer">
+                <div class="price-summary">
+                    <span>Total Estimado:</span>
+                    <strong id="wizardTotalPrice">$0 MXN</strong>
+                </div>
+                <div style="display:flex; gap:1rem;">
+                    <button class="btn-primary-outline hidden" id="btnPrev">Anterior</button>
+                    <button class="btn-primary" id="btnNext" disabled>Siguiente</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Formulario Oculto para Pedidos del Wizard -->
+    <form id="hiddenOrderForm" action="https://formsubmit.co/egblanco.betasoft@gmail.com" method="POST" style="display:none;">
+        <input type="hidden" name="_subject" value="Nuevo Pedido de Lentes - Óptica Isal">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="Cliente" id="hidden_oName">
+        <input type="hidden" name="Telefono" id="hidden_oPhone">
+        <input type="hidden" name="Modelo" id="hidden_oModel">
+        <input type="hidden" name="Graduacion" id="hidden_oGrad">
+        <input type="hidden" name="Detalle_Receta" id="hidden_oReceta">
+        <input type="hidden" name="Tecnologias" id="hidden_oTech">
+        <input type="hidden" name="Total_Estimado" id="hidden_oTotal">
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
