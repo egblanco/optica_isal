@@ -73,10 +73,13 @@
         .section-title { text-align: center; margin-bottom: 4rem; }
         .section-title h2 { font-size: 2.5rem; margin-bottom: 1rem; }
         .section-title p { color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
+        /* Announcement Bar */
+        .announcement-bar { background: linear-gradient(90deg, #1e3a8a, #3b82f6); color: white; text-align: center; padding: 0.6rem; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.5px; z-index: 1001; position: relative; }
+        .promo-text { font-weight: 700; color: #fbbf24; }
 
         /* Navbar */
-        .navbar { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 1.5rem 0; transition: var(--transition-smooth); }
-        .navbar.scrolled { padding: 0.8rem 0; background: var(--bg-glass); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-color); }
+        .navbar { position: fixed; top: 38px; width: 100%; z-index: 1000; padding: 1.5rem 0; transition: var(--transition-smooth); }
+        .navbar.scrolled { top: 0; padding: 0.8rem 0; background: var(--bg-glass); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-color); }
         .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 5%; }
         .logo img { height: 100px; width: auto; transition: 0.3s; }
         .navbar.scrolled .logo img { height: 80px; }
@@ -146,6 +149,11 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
+
+    <!-- Barra de Anuncio -->
+    <div class="announcement-bar">
+        🔥 <span class="promo-text">PROMOCIÓN:</span> ¡Examen de la vista GRATIS en la compra de tus lentes! 🔥
+    </div>
 
     <nav class="navbar" id="navbar">
         <div class="nav-container">
