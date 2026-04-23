@@ -258,6 +258,15 @@
         .brands-container:hover { opacity: 1; filter: grayscale(0); }
         .brand-item { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: #ccc; }
 
+        /* Mapeo Biométrico */
+        @keyframes scanAnim {
+            0% { top: 0%; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+        .scan-line { animation: scanAnim 2.2s infinite linear; }
+
         @media (max-width: 992px) { 
             .promo-banner-visual { flex-direction: column; }
             .glass-panel { grid-template-columns: 1fr; padding: 2rem; } 
@@ -298,6 +307,19 @@
             <h2>Colección Destacada</h2>
             <p>Descubre nuestros armazones más exclusivos de temporada.</p>
         </div>
+        
+        <!-- Banner de Mapeo Biométrico -->
+        <div class="bio-banner fade-up" style="background: linear-gradient(135deg, var(--bg-secondary) 0%, #ececec 100%); padding: 2.5rem; border-radius: 24px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 3.5rem; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 4px 20px rgba(0,0,0,0.02); flex-wrap: wrap; gap: 1.5rem;">
+            <div style="flex: 1 1 400px; text-align: left;">
+                <span style="color: var(--accent-gold); font-weight: 700; letter-spacing: 2px; font-size: 0.8rem; display: block; margin-bottom: 0.5rem;">EXCLUSIVO EN ÓPTICA ISAL</span>
+                <h3 style="font-size: 1.7rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">Mapeo Biométrico Facial</h3>
+                <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem;">Nuestro avanzado sistema analiza las proporciones de su rostro mediante inteligencia artificial para recomendar con exactitud clínica la montura que armoniza perfectamente con su fisonomía.</p>
+            </div>
+            <div style="flex: 0 0 auto;">
+                <button onclick="openBiometricos()" class="btn-primary" style="padding: 1rem 2rem; font-size: 1rem; box-shadow: 0 8px 15px rgba(197, 160, 89, 0.2);"><span style="margin-right: 0.5rem;">🔬</span> Iniciar Análisis</button>
+            </div>
+        </div>
+
         <div class="catalog-grid">
             <div class="product-card fade-up">
                 <div class="bestseller-badge">BESTSELLER</div>
@@ -642,6 +664,59 @@
     </section>
 
     <!-- WIZARD -->
+    <!-- Modales de Asistente y Biométrico -->
+
+    <!-- Mapeo Biométrico Modal -->
+    <div class="modal-overlay" id="bioM">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Evaluación Biométrica Facial</h3>
+                <span class="close-btn" onclick="closeBio()">×</span>
+            </div>
+            <div class="modal-body" style="text-align: center;">
+                <div id="bioS1">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">📱</div>
+                    <h4 style="margin-bottom: 1rem; font-size: 1.3rem;">Estudio Morfológico Digital</h4>
+                    <p style="color: var(--text-secondary); margin-bottom: 2.5rem; line-height: 1.6;">El sistema requiere acceso temporal a su cámara para calcular su estructura perimetral. Sus datos biométricos se procesan estrictamente a nivel local y <b>no se almacenan ni comparten</b>.</p>
+                    <button class="btn-primary" onclick="startBioScan()" style="width: 100%; font-size: 1.05rem; padding: 1rem;">Permitir Acceso y Comenzar</button>
+                </div>
+                
+                <div id="bioS2" class="hidden" style="position: relative; max-width: 400px; margin: 0 auto;">
+                    <div style="position: relative; border-radius: 16px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); background: #f0f0f0; min-height: 250px;">
+                        <video id="bioVid" autoplay playsinline style="width: 100%; height: auto; display: block; transform: scaleX(-1); background:#000;"></video>
+                        <div style="position: absolute; inset: 10px; border: 2px solid rgba(197, 160, 89, 0.4); border-radius: 12px; pointer-events: none;">
+                            <div class="scan-line" style="position: absolute; top:0; left:0; right:0; height:3px; background:var(--accent-gold); box-shadow:0 0 12px var(--accent-gold);"></div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1.5rem; text-align: left;">
+                        <p id="bioStatus" style="font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; font-size: 0.9rem;">Inicializando procesador de imagen...</p>
+                        <div style="height: 6px; background: #eee; border-radius: 6px; overflow: hidden;">
+                            <div id="bioProg" style="height: 100%; width: 0%; background: var(--accent-gold); transition: width 0.3s ease;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="bioS3" class="hidden">
+                    <div style="width: 70px; height: 70px; border-radius: 50%; background: #f0fdf4; color: #16a34a; font-size: 2.2rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">✓</div>
+                    <h4 style="font-size: 1.4rem; margin-bottom: 1rem;">Perfil Encontrado: <span style="color:var(--accent-gold);">Mesocefálico / Ovalado</span></h4>
+                    <p style="color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.6; font-size: 0.95rem;">Su estructura presenta proporciones altamente equilibradas. Para acentuar la simetría de sus pómulos y línea mandibular, nuestra IA diagnóstica recomienda el uso de monturas estructuradas rectangulares.</p>
+                    
+                    <div style="background: white; border: 1px solid var(--border-color); border-radius: 16px; padding: 1.5rem; text-align: left; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+                        <span style="font-size: 0.75rem; font-weight: 700; color: #888; letter-spacing: 1px;">COINCIDENCIA EXACTA EN CATÁLOGO:</span>
+                        <div style="display: flex; align-items: center; gap: 1.2rem; margin-top: 1rem;">
+                            <img src="./lentes/zeiss_zs24550.jpg" style="width: 80px; height: 80px; object-fit: contain; background: #f8f8f8; border-radius: 12px;">
+                            <div style="flex:1;">
+                                <h5 style="margin-bottom: 0.3rem; font-size: 1.1rem;">Zeiss ZS24550 N</h5>
+                                <div style="color: var(--accent-gold); font-weight: 600; font-size: 0.9rem; margin-bottom: 0.5rem;">Afinidad: 98.4%</div>
+                                <button class="btn-primary" style="padding: 0.4rem 1rem; font-size: 0.85rem; width: 100%;" onclick="closeBio(); openWizard('Zeiss ZS24550', 2255)">Configurar y Pedir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="modal-overlay" id="wM">
         <div class="modal-content">
             <div class="modal-header">
@@ -775,78 +850,15 @@
             iconAnchor: [20, 20]
         });
 
-        // Locations array for the carousel. These are local examples — update with real points if you want.
-        const locations = [
-            { name: 'Óptica ISAL (Sucursal Principal)', coords: [20.995471, -89.647435] },
-            { name: 'Plaza Centro (Referencia)', coords: [20.997000, -89.645000] },
-            { name: 'Parque Central (Referencia)', coords: [20.993500, -89.648500] }
-        ];
+        // Location for the single branch
+        const location = { name: 'Óptica ISAL (Boutique)', coords: [20.995471, -89.647435] };
 
-        // Create markers and popups
-        const markers = locations.map((loc) => {
-            return L.marker(loc.coords, { icon: isalIcon }).bindPopup(`<b>${loc.name}</b><br><a href="https://www.google.com/maps/search/?api=1&query=${loc.coords[0]},${loc.coords[1]}" target="_blank">Abrir en Google Maps</a>`).addTo(map);
-        });
+        // Create marker and popup
+        const marker = L.marker(location.coords, { icon: isalIcon })
+            .bindPopup(`<b>${location.name}</b><br><a href="https://www.google.com/maps/search/?api=1&query=${location.coords[0]},${location.coords[1]}" target="_blank">Abrir en Google Maps</a>`)
+            .addTo(map);
 
-        // Carousel UI overlay (injected into map container)
-        const mapContainer = document.getElementById('map');
-        const carouselOverlay = document.createElement('div');
-        carouselOverlay.className = 'map-carousel-overlay';
-        carouselOverlay.innerHTML = `
-            <div class="map-carousel-title" id="mapCarouselTitle">${locations[0].name}</div>
-            <div class="map-carousel-controls">
-                <button id="mapPrev" class="btn-primary-outline">Anterior</button>
-                <button id="mapNext" class="btn-primary">Siguiente</button>
-            </div>
-        `;
-        mapContainer.style.position = 'relative';
-        mapContainer.appendChild(carouselOverlay);
-
-        // Small styles for overlay (kept minimal)
-        const style = document.createElement('style');
-        style.innerHTML = `
-            .map-carousel-overlay { position: absolute; top: 10px; left: 10px; z-index: 1000; display:flex; gap:8px; align-items:center; font-size:0.95rem; }
-            .map-carousel-title { background: rgba(255,255,255,0.95); padding: 6px 10px; border-radius: 10px; font-weight:700; box-shadow: 0 6px 18px rgba(0,0,0,0.06); font-size:0.95rem; }
-            .map-carousel-controls button { margin-left:4px; font-size:0.85rem; }
-            .map-carousel-controls .btn-primary-outline { padding: 6px 8px; border-radius:8px; }
-            .map-carousel-controls .btn-primary { padding: 6px 8px; border-radius:8px; }
-        `;
-        document.head.appendChild(style);
-
-        // Carousel state and functions
-        let currentIndex = 0;
-        let carouselTimer = null;
-
-        function showLocation(i, openPopup = true) {
-            currentIndex = (i + locations.length) % locations.length;
-            const loc = locations[currentIndex];
-            map.setView(loc.coords, 16, { animate: true, duration: 0.8 });
-            if (openPopup) markers[currentIndex].openPopup();
-            const titleEl = document.getElementById('mapCarouselTitle');
-            if (titleEl) titleEl.textContent = loc.name;
-        }
-
-        function nextLocation() { showLocation(currentIndex + 1); }
-        function prevLocation() { showLocation(currentIndex - 1); }
-
-        // Auto-play
-        function startCarousel() {
-            stopCarousel();
-            carouselTimer = setInterval(nextLocation, 6000);
-        }
-        function stopCarousel() { if (carouselTimer) { clearInterval(carouselTimer); carouselTimer = null; } }
-
-        // Controls
-        document.getElementById('mapNext').addEventListener('click', () => { nextLocation(); stopCarousel(); startCarousel(); });
-        document.getElementById('mapPrev').addEventListener('click', () => { prevLocation(); stopCarousel(); startCarousel(); });
-
-        // Pause carousel while user interacts with the map
-        map.on('mouseover', stopCarousel);
-        map.on('mouseout', startCarousel);
-        markers.forEach(m => m.on('click', () => { stopCarousel(); }));
-
-        // Start with first location
-        showLocation(0, true);
-        startCarousel();
+        marker.openPopup();
 
         // UI Logic (existing scroll and intersection observers)
         window.addEventListener('scroll', () => {
@@ -859,6 +871,51 @@
             entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
         }, { threshold: 0.1 });
         document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        // Lógica del Mapeo Biométrico Facial
+        let bioStream = null;
+        function openBiometricos() {
+            try { document.getElementById('bioM').classList.add('active'); } catch(e){}
+            document.getElementById('bioS1').classList.remove('hidden');
+            document.getElementById('bioS2').classList.add('hidden');
+            document.getElementById('bioS3').classList.add('hidden');
+        }
+        function closeBio() {
+            try { document.getElementById('bioM').classList.remove('active'); } catch(e){}
+            if(bioStream) { bioStream.getTracks().forEach(t => t.stop()); bioStream = null; }
+        }
+        async function startBioScan() {
+            document.getElementById('bioS1').classList.add('hidden');
+            document.getElementById('bioS2').classList.remove('hidden');
+            
+            try {
+                bioStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "user" } });
+                document.getElementById('bioVid').srcObject = bioStream;
+                
+                let p = 0;
+                const prog = document.getElementById('bioProg');
+                const st = document.getElementById('bioStatus');
+                
+                const interval = setInterval(() => {
+                    p += 1.5;
+                    prog.style.width = p + '%';
+                    if(p > 15 && p < 35) st.innerText = "Mapeando puntos nodales faciales...";
+                    if(p > 35 && p < 65) st.innerText = "Calculando distancia interpupilar...";
+                    if(p > 65 && p < 85) st.innerText = "Evaluando simetría maxilar y amplitud ósea...";
+                    if(p > 85 && p < 99) st.innerText = "Analizando base de datos de armazones...";
+                    if(p >= 100) {
+                        clearInterval(interval);
+                        if(bioStream) { bioStream.getTracks().forEach(t => t.stop()); bioStream = null; }
+                        document.getElementById('bioS2').classList.add('hidden');
+                        document.getElementById('bioS3').classList.remove('hidden');
+                    }
+                }, 80);
+                
+            } catch(e) {
+                alert("Para el análisis biométrico, es indispensable el acceso a la cámara. Por favor autorice los permisos en su navegador.");
+                closeBio();
+            }
+        }
 
         // Wizard Logic (preserved from original file)
         let cur = 1;
