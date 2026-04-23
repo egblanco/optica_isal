@@ -613,42 +613,7 @@
         })();
     </script>
 
-    <script>
-        // Carousel compacto de testimonios (español)
-        (function(){
-            const track = document.getElementById('testimTrack');
-            const slides = track ? Array.from(track.children) : [];
-            const dots = document.querySelectorAll('#tDots .tdot');
-            let idx = 0;
-            let tTimer = null;
 
-            function show(i) {
-                if(!track) return;
-                idx = (i + slides.length) % slides.length;
-                const w = slides[0].getBoundingClientRect().width;
-                track.style.transform = `translateX(-${idx * w}px)`;
-                dots.forEach((d, di) => d.classList.toggle('active', di === idx));
-            }
-
-            function next() { show(idx + 1); }
-            function start() { stop(); tTimer = setInterval(next, 5000); }
-            function stop() { if(tTimer){ clearInterval(tTimer); tTimer = null; } }
-
-            // Inicializar
-            window.addEventListener('load', () => {
-                if(slides.length === 0) return;
-                // Ajuste responsive: recompute on resize
-                window.addEventListener('resize', () => show(idx));
-                dots.forEach((d, i) => d.addEventListener('click', () => { show(i); stop(); start(); }));
-                // pause on hover
-                const container = track.parentElement;
-                container.addEventListener('mouseover', stop);
-                container.addEventListener('mouseout', start);
-                show(0);
-                start();
-            });
-        })();
-    </script>
 
     <section id="cita" class="section-padding container">
         <div class="glass-panel fade-up">
