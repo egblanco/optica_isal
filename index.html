@@ -269,9 +269,10 @@
 
         @media (max-width: 992px) { 
             .promo-banner-visual { flex-direction: column; }
-            .glass-panel { grid-template-columns: 1fr; padding: 2rem; } 
+            .glass-panel { grid-template-columns: 1fr !important; padding: 2rem !important; } 
             .hero h1 { font-size: 3rem; } 
             .footer-content { grid-template-columns: 1fr; } 
+            .location-glass { grid-template-columns: 1fr !important; }
         }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -803,9 +804,9 @@
     </div>
 
     <section id="ubicacion" class="container section-padding">
-        <div class="glass-panel" style="grid-template-columns: 1fr 1fr; padding: 0; overflow: hidden; align-items: stretch;">
-            <div style="background: url('https://lh3.googleusercontent.com/p/AF1QipOTS4qPNzjsRVStKFGu83gBe_a1XgC45FCD80mK=s2048-v1') no-repeat center center/cover; min-height: 400px;"></div>
-            <div style="padding: 4rem; text-align: left; display: flex; flex-direction: column; justify-content: center;">
+        <div class="glass-panel location-glass" style="padding: 0; overflow: hidden; align-items: stretch; grid-template-columns: 1fr 1fr;">
+            <div style="background: url('https://lh3.googleusercontent.com/p/AF1QipOTS4qPNzjsRVStKFGu83gBe_a1XgC45FCD80mK=s2048-v1') no-repeat center center/cover; min-height: 400px; min-width: 100%;"></div>
+            <div style="padding: 4rem 2rem; text-align: left; display: flex; flex-direction: column; justify-content: center;">
                 <span style="color: var(--accent-gold); font-weight: 600; letter-spacing: 2px;">BOUTIQUE</span>
                 <h2 style="margin-top: 1rem;">Visítanos en Mérida</h2>
                 <p>Nuestra boutique te espera con los mejores armazones y atención personalizada.</p>
