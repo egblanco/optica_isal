@@ -269,10 +269,20 @@
 
         @media (max-width: 992px) { 
             .promo-banner-visual { flex-direction: column; }
-            .glass-panel { grid-template-columns: 1fr !important; padding: 2rem !important; } 
-            .hero h1 { font-size: 3rem; } 
+            .glass-panel { grid-template-columns: 1fr !important; padding: 1.5rem !important; } 
+            .hero h1 { font-size: 2.5rem; } 
             .footer-content { grid-template-columns: 1fr; } 
             .location-glass { grid-template-columns: 1fr !important; }
+            .section-padding { padding: 4rem 1rem; }
+            #vtSlides { height: 350px !important; }
+            .vtSlide { flex-direction: column; text-align: center; padding: 1.5rem !important; }
+            .vtSlide > div:first-child { flex: 0 0 70px !important; }
+            .vtSlide > div:first-child > div { width: 70px !important; height: 70px !important; font-size: 1.5rem !important; margin: 0 auto; }
+            .location-glass > div:first-child { min-height: 250px !important; }
+            #map { height: 300px !important; margin-top: 1rem !important; }
+            .bio-banner { flex-direction: column; text-align: center; }
+            .bio-banner > div { text-align: center !important; }
+            .bio-banner button { width: 100%; }
         }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
