@@ -1412,6 +1412,8 @@
         }
 
         const U = "https://ptmrgeaogvoduqsepdef.supabase.co";
+        const K = "sb_publishable_3200OWHeoZdvv9VRgsoA3w_lNGFt0pV";
+        const db = window.supabase ? window.supabase.createClient(U, K) : null;
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
             if (window.scrollY > 50) nav.classList.add('scrolled');
