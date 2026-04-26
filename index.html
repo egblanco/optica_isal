@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="./promocion/optica_isal_blanco.png">
-    <title>Óptica Líder en Mérida y México ⭐ Mejor Valorados | Óptica Isal</title>
+    <title>Óptica Líder en Mérida y México Mejor Valorados | Óptica Isal</title>
     <meta name="google-site-verification" content="Av43BmEw2EY_WuRteNGwWbqV4O_cnbuNW6cIEE2YG-Y" />
-    <meta name="description" content="Óptica Isal: La óptica líder en Mérida y México. Descubre por qué somos los mejor valorados. Exámenes de la vista premium, lentes de lujo y tecnología alemana en Yucatán.">
-    <meta name="keywords" content="Óptica Líder en Mérida y México, lentes ZEISS mérida, ZEISS SmartLife méxico, lentes DriveSafe, PhotoFusion X yucatán, mejor óptica mérida, óptica premium méxico, examen de la vista mérida, lentes de marca méxico, ópticas en yucatán">
+    <meta name="description"
+        content="Óptica Isal: La óptica líder en Mérida y México. Descubre por qué somos los mejor valorados. Exámenes de la vista premium, lentes de lujo y tecnología alemana en Yucatán.">
+    <meta name="keywords"
+        content="Óptica Líder en Mérida y México, lentes ZEISS mérida, ZEISS SmartLife méxico, lentes DriveSafe, PhotoFusion X yucatán, mejor óptica mérida, óptica premium méxico, examen de la vista mérida, lentes de marca méxico, ópticas en yucatán">
     <link rel="canonical" href="https://egblanco.github.io/optica_isal/" />
-    
+
     <!-- Open Graph -->
     <meta property="og:title" content="Óptica Líder en Mérida y México | Óptica Isal">
     <meta name="location" content="Mexico, Merida" />
     <meta name="geo.region" content="MX-YUC" />
     <meta name="geo.placename" content="Mérida" />
-    <meta property="og:description" content="Líderes en salud visual y estilo. Visita la óptica mejor valorada de Mérida y descubre nuestra colección de lujo.">
+    <meta property="og:description"
+        content="Líderes en salud visual y estilo. Visita la óptica mejor valorada de Mérida y descubre nuestra colección de lujo.">
     <meta property="og:image" content="https://egblanco.github.io/optica_isal/promocion/optica_isal_blanco.png">
-    
+
     <!-- Geo Tags para Google Maps -->
     <meta name="geo.region" content="MX-YUC" />
     <meta name="geo.placename" content="Mérida" />
     <meta name="geo.position" content="20.995471;-89.647435" />
     <meta name="ICBM" content="20.995471, -89.647435" />
-    
+
     <!-- JSON-LD Structured Data (Para Google) -->
     <script type="application/ld+json">
     {
@@ -101,7 +105,9 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <style>
         /* CSS Integrado de Óptica Isal */
@@ -120,174 +126,647 @@
             --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-        body { font-family: var(--font-body); background-color: var(--bg-primary); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; }
-        h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; }
-        a { text-decoration: none; color: inherit; transition: 0.2s; }
-        ul { list-style: none; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
-        .section-padding { padding: 6rem 0; }
-        .section-title { text-align: center; margin-bottom: 4rem; }
-        .section-title h2 { font-size: 2.5rem; margin-bottom: 1rem; }
-        .section-title p { color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .section-padding {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
         /* Navbar */
-        .navbar { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 1.5rem 0; transition: var(--transition-smooth); }
-        .navbar.scrolled { padding: 0.8rem 0; background: var(--bg-glass); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-color); }
-        .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 5%; }
-        .logo img { height: 100px; width: auto; transition: 0.3s; }
-        .navbar.scrolled .logo img { height: 80px; }
-        .nav-links { display: flex; gap: 2.5rem; align-items: center; }
-        .nav-links li a:hover { color: var(--accent-gold); }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            transition: var(--transition-smooth);
+        }
+
+        .navbar.scrolled {
+            padding: 0.8rem 0;
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .logo img {
+            height: 100px;
+            width: auto;
+            transition: 0.3s;
+        }
+
+        .navbar.scrolled .logo img {
+            height: 80px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links li a:hover {
+            color: var(--accent-gold);
+        }
 
         /* Buttons */
-        .btn-primary { background: var(--accent-gold); color: white; padding: 0.8rem 2rem; border-radius: 50px; border: none; font-weight: 500; cursor: pointer; transition: var(--transition-smooth); }
-        .btn-primary:hover { background: var(--accent-gold-hover); transform: translateY(-2px); box-shadow: 0 10px 20px rgba(189, 144, 28, 0.2); }
-        .btn-primary-outline { background: transparent; color: var(--accent-gold); border: 1px solid var(--accent-gold); padding: 0.8rem 2rem; border-radius: 50px; cursor: pointer; }
+        .btn-primary {
+            background: var(--accent-gold);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            border: none;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-gold-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(189, 144, 28, 0.2);
+        }
+
+        .btn-primary-outline {
+            background: transparent;
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            cursor: pointer;
+        }
 
         /* Hero */
-        .hero { position: relative; height: 100vh; display: flex; align-items: center; background-image: url('https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; }
-        .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.4) 100%); }
-        .hero-content { position: relative; z-index: 1; max-width: 650px; margin-left: 10%; }
-        .hero h1 { font-size: 4.5rem; line-height: 1.1; margin-bottom: 1.5rem; }
-        .hero h1 span { color: var(--accent-gold); font-style: italic; }
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background-image: url('https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.4) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 650px;
+            margin-left: 10%;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 span {
+            color: var(--accent-gold);
+            font-style: italic;
+        }
 
         /* Catalog */
-        .catalog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; }
-        .product-card { background: var(--bg-secondary); border-radius: 20px; overflow: hidden; border: 1px solid var(--border-color); transition: var(--transition-smooth); cursor: pointer; }
-        .product-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .product-image { overflow: hidden; height: 220px; background: #f8f8f8; display: flex; align-items: center; justify-content: center; }
-        .product-image img { max-height: 100%; max-width: 100%; object-fit: contain; padding: 1rem; transition: transform 0.4s ease; }
-        .product-card:hover .product-image img { transform: scale(1.05); }
-        .product-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; }
-        .price { font-family: var(--font-heading); color: var(--accent-gold); font-size: 1.25rem; font-weight: 600; }
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .product-card {
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: var(--transition-smooth);
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-image {
+            overflow: hidden;
+            height: 220px;
+            background: #f8f8f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-image img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+            padding: 1rem;
+            transition: transform 0.4s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        .price {
+            font-family: var(--font-heading);
+            color: var(--accent-gold);
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
 
         /* Appointment glass panel */
-        .glass-panel { background: rgba(255,255,255,0.7); backdrop-filter: blur(20px); border: 1px solid var(--border-color); border-radius: 30px; padding: 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
-        .form-group { margin-bottom: 1.5rem; }
-        input, select, textarea { width: 100%; padding: 1rem; border-radius: 10px; border: 1px solid var(--border-color); background: var(--bg-secondary); font-family: inherit; font-size: 1rem; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-color);
+            border-radius: 30px;
+            padding: 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-secondary);
+            font-family: inherit;
+            font-size: 1rem;
+        }
 
         /* Wizard Modal */
-        .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); backdrop-filter: blur(8px); z-index: 2000; display: none; align-items: center; justify-content: center; opacity: 0; transition: 0.3s; }
-        .modal-overlay.active { display: flex; opacity: 1; }
-        .modal-content { background: white; width: 90%; max-width: 650px; border-radius: 25px; overflow: hidden; position: relative; max-height: 90vh; display: flex; flex-direction: column; }
-        .modal-header { padding: 2rem; border-bottom: 1px solid var(--border-color); }
-        .modal-body { padding: 2rem; overflow-y: auto; }
-        .wizard-step { display: none; }
-        .wizard-step.active { display: block; }
-        .mini-catalog-grid { 
-            display: grid; 
-            grid-template-columns: repeat(2, 1fr); 
-            gap: 1.5rem; 
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: white;
+            width: 90%;
+            max-width: 650px;
+            border-radius: 25px;
+            overflow: hidden;
+            position: relative;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-header {
+            padding: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .modal-body {
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .wizard-step {
+            display: none;
+        }
+
+        .wizard-step.active {
+            display: block;
+        }
+
+        .mini-catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
             padding: 1rem 0;
         }
-        .mini-product { 
-            cursor: pointer; 
-            border: 1px solid var(--border-color); 
-            border-radius: 15px; 
-            padding: 1rem; 
-            text-align: center; 
+
+        .mini-product {
+            cursor: pointer;
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            padding: 1rem;
+            text-align: center;
             transition: 0.3s;
             background: white;
         }
-        .mini-product:hover { border-color: var(--accent-gold); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        .mini-product img { 
-            width: 100%; 
-            aspect-ratio: 1/1; 
-            object-fit: cover; 
-            border-radius: 10px; 
+
+        .mini-product:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .mini-product img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 10px;
             margin-bottom: 0.8rem;
         }
-        .mini-product h5 { font-size: 0.9rem; color: var(--text-primary); margin: 0; }
-        .mini-product.selected { background: #fdfaf3; border-color: var(--accent-gold); border-width: 2px; }
-        
-        .graduacion-options { display: flex; gap: 1rem; margin-bottom: 1rem; }
-        .grad-btn { flex: 1; padding: 0.8rem; border: 1px solid var(--border-color); border-radius: 10px; cursor: pointer; background: var(--bg-secondary); }
-        .grad-btn.active { background: var(--accent-gold); color: white; border-color: var(--accent-gold); }
 
-        .tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-        .tech-card { padding: 1rem; border: 1px solid var(--border-color); border-radius: 12px; display: flex; align-items: center; gap: 1rem; cursor: pointer; background: var(--bg-secondary); }
-        .tech-card.selected { border-color: var(--accent-gold); background: var(--accent-gold-light); }
+        .mini-product h5 {
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            margin: 0;
+        }
 
-        .modal-footer { padding: 1.5rem 2rem; border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; background: var(--bg-secondary); }
-        
-        .hidden { display: none !important; }
-        .fade-up { opacity: 0; transform: translateY(30px); transition: 0.8s var(--transition-smooth); }
-        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .mini-product.selected {
+            background: #fdfaf3;
+            border-color: var(--accent-gold);
+            border-width: 2px;
+        }
+
+        .graduacion-options {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .grad-btn {
+            flex: 1;
+            padding: 0.8rem;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            cursor: pointer;
+            background: var(--bg-secondary);
+        }
+
+        .grad-btn.active {
+            background: var(--accent-gold);
+            color: white;
+            border-color: var(--accent-gold);
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .tech-card {
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            background: var(--bg-secondary);
+        }
+
+        .tech-card.selected {
+            border-color: var(--accent-gold);
+            background: var(--accent-gold-light);
+        }
+
+        .modal-footer {
+            padding: 1.5rem 2rem;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--bg-secondary);
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 0.8s var(--transition-smooth);
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         /* Promo Visual Banner */
-        .promo-banner-visual { display: flex; background: white; border-radius: 30px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.1); min-height: 400px; border: 1px solid var(--border-color); }
-        .promo-image { flex: 1; background-image: url('https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=1000&q=80'); background-size: cover; background-position: center; min-height: 350px; }
-        .promo-content-v { flex: 1; padding: 3.5rem; display: flex; flex-direction: column; justify-content: center; background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); }
-        .promo-content-v h2 { font-size: 2.2rem; margin-bottom: 1rem; color: var(--text-primary); }
-        .promo-content-v p { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.6; }
-        .promo-content-v .badge { align-self: flex-start; background: #e0f2fe; color: #0369a1; padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 700; margin-bottom: 1rem; }
+        .promo-banner-visual {
+            display: flex;
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+            min-height: 400px;
+            border: 1px solid var(--border-color);
+        }
+
+        .promo-image {
+            flex: 1;
+            background-image: url('https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=1000&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 350px;
+        }
+
+        .promo-content-v {
+            flex: 1;
+            padding: 3.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        }
+
+        .promo-content-v h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .promo-content-v p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .promo-content-v .badge {
+            align-self: flex-start;
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
 
         /* Footer */
-        .footer { background: var(--bg-secondary); padding: 4rem 0 2rem; border-top: 1px solid var(--border-color); }
-        .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; }
+        .footer {
+            background: var(--bg-secondary);
+            padding: 4rem 0 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+        }
 
         /* Brands Section */
-        .bestseller-badge { 
-            position: absolute; top: 1rem; right: 1rem; 
-            background: var(--accent-gold); color: white; 
-            padding: 0.3rem 0.8rem; border-radius: 5px; 
-            font-size: 0.7rem; font-weight: 700; 
-            z-index: 10; letter-spacing: 1px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        .bestseller-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--accent-gold);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 5px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            z-index: 10;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
+
         /* Carrusel de Testimonios */
         .testimSlide {
             min-width: 100%;
             background: white;
             border-radius: 24px;
             padding: 3rem;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.07);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.07);
             box-sizing: border-box;
         }
+
         .tdot {
             display: inline-block;
-            width: 10px; height: 10px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
             background: #ddd;
             margin: 0 5px;
             cursor: pointer;
             transition: background 0.3s, transform 0.3s;
         }
-        .tdot.active { background: var(--accent-gold); transform: scale(1.3); }
-        .brands-container { display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 2rem; opacity: 0.6; filter: grayscale(1); transition: 0.3s; padding: 2rem 0; }
-        .brands-container:hover { opacity: 1; filter: grayscale(0); }
-        .brand-item { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: #ccc; }
+
+        .tdot.active {
+            background: var(--accent-gold);
+            transform: scale(1.3);
+        }
+
+        .brands-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            opacity: 0.6;
+            filter: grayscale(1);
+            transition: 0.3s;
+            padding: 2rem 0;
+        }
+
+        .brands-container:hover {
+            opacity: 1;
+            filter: grayscale(0);
+        }
+
+        .brand-item {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ccc;
+        }
 
         /* Mapeo Biométrico */
         @keyframes scanAnim {
-            0% { top: 0%; opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { top: 100%; opacity: 0; }
-        }
-        .scan-line { animation: scanAnim 2.2s infinite linear; }
+            0% {
+                top: 0%;
+                opacity: 0;
+            }
 
-        @media (max-width: 992px) { 
-            .promo-banner-visual { flex-direction: column; }
-            .glass-panel { grid-template-columns: 1fr !important; padding: 1.5rem !important; } 
-            .hero h1 { font-size: 2.5rem; } 
-            .footer-content { grid-template-columns: 1fr; } 
-            .location-glass { grid-template-columns: 1fr !important; }
-            .section-padding { padding: 4rem 1rem; }
-            #vtSlides { height: 350px !important; }
-            .vtSlide { flex-direction: column; text-align: center; padding: 1.5rem !important; }
-            .vtSlide > div:first-child { flex: 0 0 70px !important; }
-            .vtSlide > div:first-child > div { width: 70px !important; height: 70px !important; font-size: 1.5rem !important; margin: 0 auto; }
-            .location-glass > div:first-child { min-height: 250px !important; }
-            #map { height: 300px !important; margin-top: 1rem !important; }
-            .bio-banner { flex-direction: column; text-align: center; }
-            .bio-banner > div { text-align: center !important; }
-            .bio-banner button { width: 100%; }
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                top: 100%;
+                opacity: 0;
+            }
+        }
+
+        .scan-line {
+            animation: scanAnim 2.2s infinite linear;
+        }
+
+        @media (max-width: 992px) {
+            .promo-banner-visual {
+                flex-direction: column;
+            }
+
+            .glass-panel {
+                grid-template-columns: 1fr !important;
+                padding: 1.5rem !important;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .location-glass {
+                grid-template-columns: 1fr !important;
+            }
+
+            .section-padding {
+                padding: 4rem 1rem;
+            }
+
+            #vtSlides {
+                height: 350px !important;
+            }
+
+            .vtSlide {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem !important;
+            }
+
+            .vtSlide>div:first-child {
+                flex: 0 0 70px !important;
+            }
+
+            .vtSlide>div:first-child>div {
+                width: 70px !important;
+                height: 70px !important;
+                font-size: 1.5rem !important;
+                margin: 0 auto;
+            }
+
+            .location-glass>div:first-child {
+                min-height: 250px !important;
+            }
+
+            #map {
+                height: 300px !important;
+                margin-top: 1rem !important;
+            }
+
+            .bio-banner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .bio-banner>div {
+                text-align: center !important;
+            }
+
+            .bio-banner button {
+                width: 100%;
+            }
         }
     </style>
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
+
 <body>
 
     <nav class="navbar" id="navbar">
@@ -297,7 +776,8 @@
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#catalogo">Colección</a></li>
                 <li><a href="#cita">Citas</a></li>
-                <li><button id="navWizardBtn" class="btn-primary" style="padding: 0.5rem 1.5rem;">Pedir Lente</button></li>
+                <li><button id="navWizardBtn" class="btn-primary" style="padding: 0.5rem 1.5rem;">Pedir Lente</button>
+                </li>
             </ul>
         </div>
     </nav>
@@ -306,7 +786,8 @@
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1 class="fade-up">Óptica Líder en Mérida y México:<br><span>Excelencia Visual de Lujo.</span></h1>
-            <p class="fade-up">Descubre por qué somos la óptica mejor valorada. En Óptica Isal, combinamos tecnología de vanguardia con los armazones de diseño más exclusivos del país.</p>
+            <p class="fade-up">Descubre por qué somos la óptica mejor valorada. En Óptica Isal, combinamos tecnología de
+                vanguardia con los armazones de diseño más exclusivos del país.</p>
             <div class="hero-buttons fade-up">
                 <button id="heroWizardBtn" class="btn-primary">Pedir Lente</button>
                 <a href="#catalogo" class="btn-primary-outline">Ver Catálogo</a>
@@ -319,106 +800,139 @@
             <h2>Colección Destacada</h2>
             <p>Descubre nuestros armazones más exclusivos de temporada.</p>
         </div>
-        
-        <!-- Remove bio banner -->        <div class="catalog-grid">
+
+        <!-- Remove bio banner -->
+        <div class="catalog-grid">
             <div class="product-card fade-up">
                 <div class="bestseller-badge">BESTSELLER</div>
-                <div class="product-image"><img src="./lentes/zeiss_zs24550.jpg" alt="Zeiss ZS24550 N - Óptica Isal"></div>
+                <div class="product-image"><img src="./lentes/zeiss_zs24550.jpg" alt="Zeiss ZS24550 N - Óptica Isal">
+                </div>
                 <div class="product-info">
                     <h3>Zeiss ZS24550 N</h3>
                     <p>Diseño rectangular en acabado Matte Black sofisticado.</p>
-                    <div class="product-bottom"><span class="price">$2,255 MXN</span><button class="btn-primary" style="padding: 0.4rem 1rem;" onclick="openWizard('Zeiss ZS24550',2255)">Ver</button></div>
+                    <div class="product-bottom"><span class="price">$2,255 MXN</span><button class="btn-primary"
+                            style="padding: 0.4rem 1rem;" onclick="openWizard('Zeiss ZS24550',2255)">Ver</button></div>
                 </div>
             </div>
             <div class="product-card fade-up" style="transition-delay: 0.1s;">
                 <div class="bestseller-badge">MÁS VENDIDO</div>
-                <div class="product-image"><img src="./lentes/zeiss_zs25553.jpg" alt="Zeiss ZS25553 - Óptica Isal"></div>
+                <div class="product-image"><img src="./lentes/zeiss_zs25553.jpg" alt="Zeiss ZS25553 - Óptica Isal">
+                </div>
                 <div class="product-info">
                     <h3>Zeiss ZS25553</h3>
                     <p>Colección de lujo en acetato italiano pulido.</p>
-                    <div class="product-bottom"><span class="price">$2,583 MXN</span><button class="btn-primary" style="padding: 0.4rem 1rem;" onclick="openWizard('Zeiss ZS25553',2583)">Ver</button></div>
+                    <div class="product-bottom"><span class="price">$2,583 MXN</span><button class="btn-primary"
+                            style="padding: 0.4rem 1rem;" onclick="openWizard('Zeiss ZS25553',2583)">Ver</button></div>
                 </div>
             </div>
             <div class="product-card fade-up" style="transition-delay: 0.2s;">
-                <div class="product-image"><img src="./lentes/zeiss_zs25560.jpg" alt="Zeiss ZS25560 - Óptica Isal"></div>
+                <div class="product-image"><img src="./lentes/zeiss_zs25560.jpg" alt="Zeiss ZS25560 - Óptica Isal">
+                </div>
                 <div class="product-info">
                     <h3>Zeiss ZS25560</h3>
                     <p>Estilo cuadrado moderno con tecnología de ajuste Zeiss.</p>
-                    <div class="product-bottom"><span class="price">$3,021 MXN</span><button class="btn-primary" style="padding: 0.4rem 1rem;" onclick="openWizard('Zeiss ZS25560',3021)">Ver</button></div>
+                    <div class="product-bottom"><span class="price">$3,021 MXN</span><button class="btn-primary"
+                            style="padding: 0.4rem 1rem;" onclick="openWizard('Zeiss ZS25560',3021)">Ver</button></div>
                 </div>
             </div>
             <div class="product-card fade-up" style="transition-delay: 0.3s;">
-                <div class="product-image"><img src="./lentes/zeiss_zs22524.jpg" alt="Zeiss ZS22524 - Óptica Isal"></div>
+                <div class="product-image"><img src="./lentes/zeiss_zs22524.jpg" alt="Zeiss ZS22524 - Óptica Isal">
+                </div>
                 <div class="product-info">
                     <h3>Zeiss ZS22524</h3>
                     <p>Serie Titanium: máxima ligereza y durabilidad extrema.</p>
-                    <div class="product-bottom"><span class="price">$3,687 MXN</span><button class="btn-primary" style="padding: 0.4rem 1rem;" onclick="openWizard('Zeiss ZS22524',3687)">Ver</button></div>
+                    <div class="product-bottom"><span class="price">$3,687 MXN</span><button class="btn-primary"
+                            style="padding: 0.4rem 1rem;" onclick="openWizard('Zeiss ZS22524',3687)">Ver</button></div>
                 </div>
             </div>
             <div class="product-card fade-up">
-                <div class="product-image"><img src="https://images.unsplash.com/photo-1509660100457-301037563124?auto=format&fit=crop&w=800&q=80" alt="Emerald Cat-Eye - Óptica Isal"></div>
+                <div class="product-image"><img
+                        src="https://images.unsplash.com/photo-1509660100457-301037563124?auto=format&fit=crop&w=800&q=80"
+                        alt="Emerald Cat-Eye - Óptica Isal"></div>
                 <div class="product-info">
                     <h3>Emerald Cat-Eye</h3>
                     <p>Elegancia femenina en tonos verdes profundos.</p>
-                    <div class="product-bottom"><span class="price">$2,950 MXN</span><button class="btn-primary" style="padding: 0.4rem 1rem;">Ver</button></div>
+                    <div class="product-bottom"><span class="price">$2,950 MXN</span><button class="btn-primary"
+                            style="padding: 0.4rem 1rem;">Ver</button></div>
                 </div>
             </div>
             <div class="product-card fade-up">
                 <div class="bestseller-badge">BESTSELLER</div>
-                <div class="product-image"><img src="https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?auto=format&fit=crop&w=800&q=80" alt="Royal Blue Aviator - Diseño Nacional"></div>
+                <div class="product-image"><img
+                        src="https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?auto=format&fit=crop&w=800&q=80"
+                        alt="Royal Blue Aviator - Diseño Nacional"></div>
                 <div class="product-info">
                     <h3>Royal Aviator</h3>
                     <p>Un clásico reinventado en azul cobalto.</p>
-                    <div class="product-bottom"><span class="price">$2,780 MXN</span><button class="btn-primary" style="padding: 0.4rem 1rem;">Ver</button></div>
+                    <div class="product-bottom"><span class="price">$2,780 MXN</span><button class="btn-primary"
+                            style="padding: 0.4rem 1rem;">Ver</button></div>
                 </div>
             </div>
             <div class="product-card fade-up">
-                <div class="product-image"><img src="https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=800&q=80" alt="Carbon Tech - Óptica Isal"></div>
+                <div class="product-image"><img
+                        src="https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=800&q=80"
+                        alt="Carbon Tech - Óptica Isal"></div>
                 <div class="product-info">
                     <h3>Carbon Tech</h3>
                     <p>Fibra de carbono mate, ultra-resistente.</p>
-                    <div class="product-bottom"><span class="price">$4,100 MXN</span><button class="btn-primary" style="padding: 0.4rem 1rem;">Ver</button></div>
+                    <div class="product-bottom"><span class="price">$4,100 MXN</span><button class="btn-primary"
+                            style="padding: 0.4rem 1rem;">Ver</button></div>
                 </div>
             </div>
             <div class="product-card fade-up">
-                <div class="product-image"><img src="https://images.unsplash.com/photo-1516216480373-98288ce58742?auto=format&fit=crop&w=800&q=80" alt="Vintage Tortoise - Estilo Clásico"></div>
+                <div class="product-image"><img
+                        src="https://images.unsplash.com/photo-1516216480373-98288ce58742?auto=format&fit=crop&w=800&q=80"
+                        alt="Vintage Tortoise - Estilo Clásico"></div>
                 <div class="product-info">
                     <h3>Vintage Tortoise</h3>
                     <p>Efecto carey clásico con bisagras reforzadas.</p>
-                    <div class="product-bottom"><span class="price">$1,950 MXN</span><button class="btn-primary" style="padding: 0.4rem 1rem;">Ver</button></div>
+                    <div class="product-bottom"><span class="price">$1,950 MXN</span><button class="btn-primary"
+                            style="padding: 0.4rem 1rem;">Ver</button></div>
                 </div>
             </div>
             <div class="product-card fade-up">
-                <div class="product-image"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80" alt="Rose Gold Round - Óptica Isal"></div>
+                <div class="product-image"><img
+                        src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80"
+                        alt="Rose Gold Round - Óptica Isal"></div>
                 <div class="product-info">
                     <h3>Rose Gold Round</h3>
                     <p>Montura circular minimalista en oro rosa.</p>
-                    <div class="product-bottom"><span class="price">$3,100 MXN</span><button class="btn-primary" style="padding: 0.4rem 1rem;">Ver</button></div>
+                    <div class="product-bottom"><span class="price">$3,100 MXN</span><button class="btn-primary"
+                            style="padding: 0.4rem 1rem;">Ver</button></div>
                 </div>
             </div>
             <div class="product-card fade-up">
-                <div class="product-image"><img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80" alt="Midnight Blue Sport - Óptica Isal"></div>
+                <div class="product-image"><img
+                        src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80"
+                        alt="Midnight Blue Sport - Óptica Isal"></div>
                 <div class="product-info">
                     <h3>Midnight Sport</h3>
                     <p>Diseño aerodinámico para alto rendimiento.</p>
-                    <div class="product-bottom"><span class="price">$2,450 MXN</span><button class="btn-primary" style="padding: 0.4rem 1rem;">Ver</button></div>
+                    <div class="product-bottom"><span class="price">$2,450 MXN</span><button class="btn-primary"
+                            style="padding: 0.4rem 1rem;">Ver</button></div>
                 </div>
             </div>
             <div class="product-card fade-up">
                 <div class="bestseller-badge">MÁS VENDIDO</div>
-                <div class="product-image"><img src="https://images.unsplash.com/photo-1551221152-ed928424a87a?auto=format&fit=crop&w=800&q=80" alt="Crystal Clear Wayfarer - Estilo Moderno"></div>
+                <div class="product-image"><img
+                        src="https://images.unsplash.com/photo-1551221152-ed928424a87a?auto=format&fit=crop&w=800&q=80"
+                        alt="Crystal Clear Wayfarer - Estilo Moderno"></div>
                 <div class="product-info">
                     <h3>Crystal Wayfarer</h3>
                     <p>Acetato transparente de alta densidad.</p>
-                    <div class="product-bottom"><span class="price">$2,100 MXN</span><button class="btn-primary" style="padding: 0.4rem 1rem;">Ver</button></div>
+                    <div class="product-bottom"><span class="price">$2,100 MXN</span><button class="btn-primary"
+                            style="padding: 0.4rem 1rem;">Ver</button></div>
                 </div>
             </div>
             <div class="product-card fade-up">
-                <div class="product-image"><img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80" alt="Golden Aviator 2.0 - Óptica Isal"></div>
+                <div class="product-image"><img
+                        src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80"
+                        alt="Golden Aviator 2.0 - Óptica Isal"></div>
                 <div class="product-info">
                     <h3>Aviator 2.0</h3>
                     <p>Evolución del clásico con doble puente dorado.</p>
-                    <div class="product-bottom"><span class="price">$3,800 MXN</span><button class="btn-primary" style="padding: 0.4rem 1rem;">Ver</button></div>
+                    <div class="product-bottom"><span class="price">$3,800 MXN</span><button class="btn-primary"
+                            style="padding: 0.4rem 1rem;">Ver</button></div>
                 </div>
             </div>
         </div>
@@ -434,69 +948,93 @@
     </section>
 
     <!-- SECCIÓN ZEISS -->
-    <section id="tecnologia" class="section-padding" style="background: linear-gradient(135deg, #005596 0%, #002d50 100%); color: white; border-radius: 0 0 50px 50px;">
+    <section id="tecnologia" class="section-padding"
+        style="background: linear-gradient(135deg, #005596 0%, #002d50 100%); color: white; border-radius: 0 0 50px 50px;">
         <div class="container">
             <div class="section-title fade-up" style="text-align: center;">
                 <span style="color: #6fb6ff; font-weight: 600; letter-spacing: 2px;">TECNOLOGÍA ALEMANA</span>
                 <h2 style="color: white; margin-top: 1rem;">Lentes de Precisión ZEISS</h2>
-                <p style="color: #cbd5e1; max-width: 700px; margin: 0 auto;">Óptica Isal es Distribuidor Autorizado ZEISS en Mérida, ofreciendo la ingeniería óptica más avanzada del mundo.</p>
+                <p style="color: #cbd5e1; max-width: 700px; margin: 0 auto;">Óptica Isal es Distribuidor Autorizado
+                    ZEISS en Mérida, ofreciendo la ingeniería óptica más avanzada del mundo.</p>
             </div>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 4rem;">
-                <div class="glass-panel" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); padding: 2.5rem; text-align: left; transition: transform 0.3s ease;">
+
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 4rem;">
+                <div class="glass-panel"
+                    style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); padding: 2.5rem; text-align: left; transition: transform 0.3s ease;">
                     <div style="font-size: 2.5rem; margin-bottom: 1.5rem;">📱</div>
                     <h3 style="color: white; margin-bottom: 1rem;">ZEISS SmartLife</h3>
-                    <p style="font-size: 0.95rem; color: #94a3b8; line-height: 1.6;">Diseñados para el estilo de vida digital actual. Ofrecen una visión nítida y cómoda mientras te mueves entre tus dispositivos y el mundo real.</p>
+                    <p style="font-size: 0.95rem; color: #94a3b8; line-height: 1.6;">Diseñados para el estilo de vida
+                        digital actual. Ofrecen una visión nítida y cómoda mientras te mueves entre tus dispositivos y
+                        el mundo real.</p>
                 </div>
-                <div class="glass-panel" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); padding: 2.5rem; text-align: left;">
+                <div class="glass-panel"
+                    style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); padding: 2.5rem; text-align: left;">
                     <div style="font-size: 2.5rem; margin-bottom: 1.5rem;">🚗</div>
                     <h3 style="color: white; margin-bottom: 1rem;">ZEISS DriveSafe</h3>
-                    <p style="font-size: 0.95rem; color: #94a3b8; line-height: 1.6;">Seguridad máxima al volante. Reduce los reflejos nocturnos de faros LED y mejora el enfoque rápido entre carretera y espejos.</p>
+                    <p style="font-size: 0.95rem; color: #94a3b8; line-height: 1.6;">Seguridad máxima al volante. Reduce
+                        los reflejos nocturnos de faros LED y mejora el enfoque rápido entre carretera y espejos.</p>
                 </div>
-                <div class="glass-panel" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); padding: 2.5rem; text-align: left;">
+                <div class="glass-panel"
+                    style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); padding: 2.5rem; text-align: left;">
                     <div style="font-size: 2.5rem; margin-bottom: 1.5rem;">☀️</div>
                     <h3 style="color: white; margin-bottom: 1rem;">PhotoFusion X</h3>
-                    <p style="font-size: 0.95rem; color: #94a3b8; line-height: 1.6;">Los lentes inteligentes que se adaptan a la luz. Cambio ultra-rápido de transparente a oscuro con protección total UV y luz azul.</p>
+                    <p style="font-size: 0.95rem; color: #94a3b8; line-height: 1.6;">Los lentes inteligentes que se
+                        adaptan a la luz. Cambio ultra-rápido de transparente a oscuro con protección total UV y luz
+                        azul.</p>
                 </div>
-                <div class="glass-panel" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); padding: 2.5rem; text-align: left;">
+                <div class="glass-panel"
+                    style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); padding: 2.5rem; text-align: left;">
                     <div style="font-size: 2.5rem; margin-bottom: 1.5rem;">🛡️</div>
                     <h3 style="color: white; margin-bottom: 1rem;">ZEISS BlueGuard</h3>
-                    <p style="font-size: 0.95rem; color: #94a3b8; line-height: 1.6;">Protección contra la luz azul integrada directamente en el material del lente. Salud visual absoluta para el uso prolongado de pantallas.</p>
+                    <p style="font-size: 0.95rem; color: #94a3b8; line-height: 1.6;">Protección contra la luz azul
+                        integrada directamente en el material del lente. Salud visual absoluta para el uso prolongado de
+                        pantallas.</p>
                 </div>
             </div>
-            
-            <div style="text-align: center; margin-top: 5rem; padding: 2rem; background: rgba(255,255,255,0.03); border-radius: 20px;">
-                <p style="font-weight: 500; font-size: 1.1rem; color: #6fb6ff;">Isal boutique: Ingeniería Alemana para tus ojos en Mérida.</p>
+
+            <div
+                style="text-align: center; margin-top: 5rem; padding: 2rem; background: rgba(255,255,255,0.03); border-radius: 20px;">
+                <p style="font-weight: 500; font-size: 1.1rem; color: #6fb6ff;">Isal boutique: Ingeniería Alemana para
+                    tus ojos en Mérida.</p>
             </div>
         </div>
     </section>
 
-        <!-- FAQ SECTION -->
-        <section id="faq" class="section-padding container">
-            <div class="section-title fade-up">
-                <h2>Preguntas Frecuentes</h2>
-                <p>Todo lo que necesitas saber antes de visitarnos.</p>
+    <!-- FAQ SECTION -->
+    <section id="faq" class="section-padding container">
+        <div class="section-title fade-up">
+            <h2>Preguntas Frecuentes</h2>
+            <p>Todo lo que necesitas saber antes de visitarnos.</p>
+        </div>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div class="fade-up"
+                style="margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
+                <h4 style="margin-bottom: 0.5rem;">¿Cuánto tiempo tarda el examen de la vista?</h4>
+                <p style="color: var(--text-secondary); font-size: 0.95rem;">El examen completo dura aproximadamente 20
+                    a 30 minutos, donde evaluamos no solo tu graduación sino también tu salud ocular.</p>
             </div>
-            <div style="max-width: 800px; margin: 0 auto;">
-                <div class="fade-up" style="margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
-                    <h4 style="margin-bottom: 0.5rem;">¿Cuánto tiempo tarda el examen de la vista?</h4>
-                    <p style="color: var(--text-secondary); font-size: 0.95rem;">El examen completo dura aproximadamente 20 a 30 minutos, donde evaluamos no solo tu graduación sino también tu salud ocular.</p>
-                </div>
-                <div class="fade-up" style="margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
-                    <h4 style="margin-bottom: 0.5rem;">¿Qué garantía tienen los armazones?</h4>
-                    <p style="color: var(--text-secondary); font-size: 0.95rem;">Todos nuestros armazones cuentan con 1 año de garantía por defectos de fábrica.</p>
-                </div>
-                <div class="fade-up" style="margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
-                    <h4 style="margin-bottom: 0.5rem;">¿Hacen entregas el mismo día?</h4>
-                    <p style="color: var(--text-secondary); font-size: 0.95rem;">Dependiendo de la graduación y el tipo de mica, podemos entregar en un plazo de 24 a 48 horas hábiles.</p>
-                </div>
+            <div class="fade-up"
+                style="margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
+                <h4 style="margin-bottom: 0.5rem;">¿Qué garantía tienen los armazones?</h4>
+                <p style="color: var(--text-secondary); font-size: 0.95rem;">Todos nuestros armazones cuentan con 1 año
+                    de garantía por defectos de fábrica.</p>
             </div>
-        </section>
+            <div class="fade-up"
+                style="margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
+                <h4 style="margin-bottom: 0.5rem;">¿Hacen entregas el mismo día?</h4>
+                <p style="color: var(--text-secondary); font-size: 0.95rem;">Dependiendo de la graduación y el tipo de
+                    mica, podemos entregar en un plazo de 24 a 48 horas hábiles.</p>
+            </div>
+        </div>
+    </section>
 
     <!-- TESTIMONIOS TIPO VIDEO -->
     <section class="section-padding container" style="margin-bottom: 6rem; overflow: hidden;">
         <div style="text-align: center; margin-bottom: 2rem;">
-            <span style="background: var(--accent-gold); color: white; padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 600; font-size: 0.9rem; letter-spacing: 1px;">⭐ 4.9 en Google Maps | ÓPTICA MEJOR VALORADA EN MÉRIDA</span>
+            <span
+                style="background: var(--accent-gold); color: white; padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 600; font-size: 0.9rem; letter-spacing: 1px;">⭐
+                4.9 en Google Maps | ÓPTICA MEJOR VALORADA EN MÉRIDA</span>
         </div>
         <div class="section-title fade-up" style="text-align:center;">
             <h2>Lo que dicen nuestros clientes</h2>
@@ -505,68 +1043,94 @@
 
         <div id="videoTestim" style="position: relative; margin-top: 2.5rem;">
             <div id="vtSlides" style="position:relative; height:260px;">
-                <div class="vtSlide active" style="position:absolute; inset:0; padding:2rem; display:flex; gap:2rem; align-items:center; background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,252,0.98)); border-radius:18px; box-shadow:0 20px 40px rgba(0,0,0,0.06);">
+                <div class="vtSlide active"
+                    style="position:absolute; inset:0; padding:2rem; display:flex; gap:2rem; align-items:center; background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,252,0.98)); border-radius:18px; box-shadow:0 20px 40px rgba(0,0,0,0.06);">
                     <div style="flex:0 0 90px; text-align:center;">
-                        <div style="width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,#c5a059,#a07840);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:2rem;">A</div>
+                        <div
+                            style="width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,#c5a059,#a07840);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:2rem;">
+                            A</div>
                     </div>
                     <div style="flex:1;">
                         <div style="color: #f59e0b; font-size:1.2rem; margin-bottom:0.6rem;">★★★★★</div>
-                        <p style="font-style:italic; font-size:1.15rem; line-height:1.6; color:var(--text-primary);">"Excelente atención, tengo más de 10 años de ser cliente y es el mejor lugar para comprar lentes."</p>
+                        <p style="font-style:italic; font-size:1.15rem; line-height:1.6; color:var(--text-primary);">
+                            "Excelente atención, tengo más de 10 años de ser cliente y es el mejor lugar para comprar
+                            lentes."</p>
                         <div style="margin-top:1rem; font-weight:700;">Arian Quijano</div>
                     </div>
                 </div>
 
-                <div class="vtSlide" style="position:absolute; inset:0; padding:2rem; display:flex; gap:2rem; align-items:center; opacity:0; transition: opacity 1s ease; border-radius:18px; background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,252,0.98)); box-shadow:0 20px 40px rgba(0,0,0,0.06);">
+                <div class="vtSlide"
+                    style="position:absolute; inset:0; padding:2rem; display:flex; gap:2rem; align-items:center; opacity:0; transition: opacity 1s ease; border-radius:18px; background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,252,0.98)); box-shadow:0 20px 40px rgba(0,0,0,0.06);">
                     <div style="flex:0 0 90px; text-align:center;">
-                        <div style="width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,#8b5cf6,#6d28d9);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:2rem;">S</div>
+                        <div
+                            style="width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,#8b5cf6,#6d28d9);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:2rem;">
+                            S</div>
                     </div>
                     <div style="flex:1;">
                         <div style="color: #f59e0b; font-size:1.2rem; margin-bottom:0.6rem;">★★★★★</div>
-                        <p style="font-style:italic; font-size:1.15rem; line-height:1.6; color:var(--text-primary);">"Excelente atención de su propietario y de precios ni se diga, muy accesibles y hermosos modelos a la vanguardia."</p>
+                        <p style="font-style:italic; font-size:1.15rem; line-height:1.6; color:var(--text-primary);">
+                            "Excelente atención de su propietario y de precios ni se diga, muy accesibles y hermosos
+                            modelos a la vanguardia."</p>
                         <div style="margin-top:1rem; font-weight:700;">Silvia Novelo</div>
                     </div>
                 </div>
-                
-                <div class="vtSlide" style="position:absolute; inset:0; padding:2rem; display:flex; gap:2rem; align-items:center; opacity:0; transition: opacity 1s ease; border-radius:18px; background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,252,0.98)); box-shadow:0 20px 40px rgba(0,0,0,0.06);">
+
+                <div class="vtSlide"
+                    style="position:absolute; inset:0; padding:2rem; display:flex; gap:2rem; align-items:center; opacity:0; transition: opacity 1s ease; border-radius:18px; background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,252,0.98)); box-shadow:0 20px 40px rgba(0,0,0,0.06);">
                     <div style="flex:0 0 90px; text-align:center;">
-                        <div style="width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,#f97316,#ea580c);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:2rem;">M</div>
+                        <div
+                            style="width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,#f97316,#ea580c);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:2rem;">
+                            M</div>
                     </div>
                     <div style="flex:1;">
                         <div style="color: #f59e0b; font-size:1.2rem; margin-bottom:0.6rem;">★★★★★</div>
-                        <p style="font-style:italic; font-size:1.15rem; line-height:1.6; color:var(--text-primary);">"Gran servicio y atención personalizada. Los lentes quedaron perfectos."</p>
+                        <p style="font-style:italic; font-size:1.15rem; line-height:1.6; color:var(--text-primary);">
+                            "Gran servicio y atención personalizada. Los lentes quedaron perfectos."</p>
                         <div style="margin-top:1rem; font-weight:700;">María López</div>
                     </div>
                 </div>
 
-                <div class="vtSlide" style="position:absolute; inset:0; padding:2rem; display:flex; gap:2rem; align-items:center; opacity:0; transition: opacity 1s ease; border-radius:18px; background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,252,0.98)); box-shadow:0 20px 40px rgba(0,0,0,0.06);">
+                <div class="vtSlide"
+                    style="position:absolute; inset:0; padding:2rem; display:flex; gap:2rem; align-items:center; opacity:0; transition: opacity 1s ease; border-radius:18px; background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,252,0.98)); box-shadow:0 20px 40px rgba(0,0,0,0.06);">
                     <div style="flex:0 0 90px; text-align:center;">
-                        <div style="width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,#06b6d4,#0ea5b7);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:2rem;">R</div>
+                        <div
+                            style="width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,#06b6d4,#0ea5b7);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:2rem;">
+                            R</div>
                     </div>
                     <div style="flex:1;">
                         <div style="color: #f59e0b; font-size:1.2rem; margin-bottom:0.6rem;">★★★★★</div>
-                        <p style="font-style:italic; font-size:1.15rem; line-height:1.6; color:var(--text-primary);">"Excelente calidad en los tratamientos antirreflejantes, muy recomendados."</p>
+                        <p style="font-style:italic; font-size:1.15rem; line-height:1.6; color:var(--text-primary);">
+                            "Excelente calidad en los tratamientos antirreflejantes, muy recomendados."</p>
                         <div style="margin-top:1rem; font-weight:700;">Roberto Fernández</div>
                     </div>
                 </div>
 
-                <div class="vtSlide" style="position:absolute; inset:0; padding:2rem; display:flex; gap:2rem; align-items:center; opacity:0; transition: opacity 1s ease; border-radius:18px; background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,252,0.98)); box-shadow:0 20px 40px rgba(0,0,0,0.06);">
+                <div class="vtSlide"
+                    style="position:absolute; inset:0; padding:2rem; display:flex; gap:2rem; align-items:center; opacity:0; transition: opacity 1s ease; border-radius:18px; background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,252,0.98)); box-shadow:0 20px 40px rgba(0,0,0,0.06);">
                     <div style="flex:0 0 90px; text-align:center;">
-                        <div style="width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,#ef4444,#b91c1c);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:2rem;">L</div>
+                        <div
+                            style="width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,#ef4444,#b91c1c);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:2rem;">
+                            L</div>
                     </div>
                     <div style="flex:1;">
                         <div style="color: #f59e0b; font-size:1.2rem; margin-bottom:0.6rem;">★★★★★</div>
-                        <p style="font-style:italic; font-size:1.15rem; line-height:1.6; color:var(--text-primary);">"Rápido, profesional y precios justos. Volveré sin duda."</p>
+                        <p style="font-style:italic; font-size:1.15rem; line-height:1.6; color:var(--text-primary);">
+                            "Rápido, profesional y precios justos. Volveré sin duda."</p>
                         <div style="margin-top:1rem; font-weight:700;">Luis Martínez</div>
                     </div>
                 </div>
 
-                <div class="vtSlide" style="position:absolute; inset:0; padding:2rem; display:flex; gap:2rem; align-items:center; opacity:0; transition: opacity 1s ease; border-radius:18px; background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,252,0.98)); box-shadow:0 20px 40px rgba(0,0,0,0.06);">
+                <div class="vtSlide"
+                    style="position:absolute; inset:0; padding:2rem; display:flex; gap:2rem; align-items:center; opacity:0; transition: opacity 1s ease; border-radius:18px; background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,252,0.98)); box-shadow:0 20px 40px rgba(0,0,0,0.06);">
                     <div style="flex:0 0 90px; text-align:center;">
-                        <div style="width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,#10b981,#065f46);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:2rem;">I</div>
+                        <div
+                            style="width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,#10b981,#065f46);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:2rem;">
+                            I</div>
                     </div>
                     <div style="flex:1;">
                         <div style="color: #f59e0b; font-size:1.2rem; margin-bottom:0.6rem;">★★★★★</div>
-                        <p style="font-style:italic; font-size:1.15rem; line-height:1.6; color:var(--text-primary);">"Excelente atención, el lugar muy agradable y me gustó muchísimo los lentes."</p>
+                        <p style="font-style:italic; font-size:1.15rem; line-height:1.6; color:var(--text-primary);">
+                            "Excelente atención, el lugar muy agradable y me gustó muchísimo los lentes."</p>
                         <div style="margin-top:1rem; font-weight:700;">Isabel Galera</div>
                     </div>
                 </div>
@@ -574,7 +1138,8 @@
 
             <!-- Barra de progreso estilo reproductor -->
             <div style="height:6px; background:rgba(0,0,0,0.07); border-radius:6px; margin-top:12px; overflow:hidden;">
-                <div id="vtProgress" style="height:100%; width:0%; background:var(--accent-gold); transition: width linear;"></div>
+                <div id="vtProgress"
+                    style="height:100%; width:0%; background:var(--accent-gold); transition: width linear;"></div>
             </div>
 
             <!-- Controles minimalistas en español -->
@@ -584,14 +1149,16 @@
             </div>
 
             <div style="text-align:center; margin-top:18px;">
-                <a href="https://search.google.com/local/writereview?placeid=0x8f56736e0650c8e3:0x2c4aea173d38a120" target="_blank" class="btn-primary-outline" style="padding: 0.6rem 2rem;">Escribir una reseña en Google</a>
+                <a href="https://search.google.com/local/writereview?placeid=0x8f56736e0650c8e3:0x2c4aea173d38a120"
+                    target="_blank" class="btn-primary-outline" style="padding: 0.6rem 2rem;">Escribir una reseña en
+                    Google</a>
             </div>
         </div>
     </section>
 
     <script>
         // Carrusel tipo vídeo para testimonios (solo español)
-        (function(){
+        (function () {
             const slides = Array.from(document.querySelectorAll('#vtSlides .vtSlide'));
             const progress = document.getElementById('vtProgress');
             const prev = document.getElementById('vtPrev');
@@ -612,26 +1179,26 @@
                 resetProgress();
             }
 
-            function resetProgress(){
-                if(progress) { progress.style.transition = 'none'; progress.style.width = '0%'; void progress.offsetWidth; progress.style.transition = `width ${duration}ms linear`; progress.style.width = '100%'; }
+            function resetProgress() {
+                if (progress) { progress.style.transition = 'none'; progress.style.width = '0%'; void progress.offsetWidth; progress.style.transition = `width ${duration}ms linear`; progress.style.width = '100%'; }
             }
 
-            function start(){ stop(); startTime = Date.now(); timer = setTimeout(()=> { nextSlide(); }, duration); resetProgress(); }
-            function stop(){ if(timer){ clearTimeout(timer); timer = null; } if(progress) { progress.style.transition = 'none'; } }
+            function start() { stop(); startTime = Date.now(); timer = setTimeout(() => { nextSlide(); }, duration); resetProgress(); }
+            function stop() { if (timer) { clearTimeout(timer); timer = null; } if (progress) { progress.style.transition = 'none'; } }
 
-            function nextSlide(){ show(i+1); start(); }
-            function prevSlide(){ show(i-1); start(); }
+            function nextSlide() { show(i + 1); start(); }
+            function prevSlide() { show(i - 1); start(); }
 
             // Controls
-            if(next) next.addEventListener('click', () => { nextSlide(); });
-            if(prev) prev.addEventListener('click', () => { prevSlide(); });
+            if (next) next.addEventListener('click', () => { nextSlide(); });
+            if (prev) prev.addEventListener('click', () => { prevSlide(); });
 
             // Pause on hover
             const container = document.getElementById('videoTestim');
-            if(container){ container.addEventListener('mouseover', stop); container.addEventListener('mouseout', start); }
+            if (container) { container.addEventListener('mouseover', stop); container.addEventListener('mouseout', start); }
 
             // Init
-            if(slides.length > 0) { show(0); start(); }
+            if (slides.length > 0) { show(0); start(); }
         })();
     </script>
 
@@ -712,10 +1279,18 @@
                 <div class="wizard-step" id="ws3">
                     <h4>Tratamientos Especiales</h4>
                     <div class="tech-grid">
-                        <div class="tech-card" onclick="selT('Anti Blue', 500, this)"><h5>ZEISS BlueGuard</h5></div>
-                        <div class="tech-card" onclick="selT('Fotocromatico', 1200, this)"><h5>PhotoFusion X</h5></div>
-                        <div class="tech-card" onclick="selT('DriveSafe', 1500, this)"><h5>ZEISS DriveSafe</h5></div>
-                        <div class="tech-card" onclick="selT('UV Protect', 300, this)"><h5>Protección UV 400</h5></div>
+                        <div class="tech-card" onclick="selT('Anti Blue', 500, this)">
+                            <h5>ZEISS BlueGuard</h5>
+                        </div>
+                        <div class="tech-card" onclick="selT('Fotocromatico', 1200, this)">
+                            <h5>PhotoFusion X</h5>
+                        </div>
+                        <div class="tech-card" onclick="selT('DriveSafe', 1500, this)">
+                            <h5>ZEISS DriveSafe</h5>
+                        </div>
+                        <div class="tech-card" onclick="selT('UV Protect', 300, this)">
+                            <h5>Protección UV 400</h5>
+                        </div>
                     </div>
                 </div>
 
@@ -725,20 +1300,25 @@
                     <div class="form-group"><input type="text" id="oN" placeholder="Tu Nombre Completo"></div>
                     <div class="form-group"><input type="tel" id="oT" placeholder="WhatsApp / Teléfono"></div>
                 </div>
-                
+
                 <!-- Paso 5: Éxito y Ubicación -->
                 <div class="wizard-step" id="ws5">
                     <div style="text-align: center; padding: 1rem 0;">
                         <div style="font-size: 3rem; color: #10b981; margin-bottom: 1rem;">✓</div>
                         <h2 style="margin-bottom: 1rem;">¡Pedido Recibido!</h2>
-                        <p style="color: var(--text-secondary); margin-bottom: 2rem;">Gracias por confiar en Óptica Isal. Te esperamos en nuestra sucursal para finalizar tu proceso:</p>
-                        
-                        <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 20px; border: 1px solid var(--border-color); margin-bottom: 2rem;">
+                        <p style="color: var(--text-secondary); margin-bottom: 2rem;">Gracias por confiar en Óptica
+                            Isal. Te esperamos en nuestra sucursal para finalizar tu proceso:</p>
+
+                        <div
+                            style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 20px; border: 1px solid var(--border-color); margin-bottom: 2rem;">
                             <h4 style="margin-bottom: 0.5rem;">Óptica ISAL</h4>
                             <p style="font-size: 0.9rem;">C. 60 414, Benito Juárez Nte, 97119 Mérida, Yuc.</p>
-                            <a href="https://www.google.com/maps/place/%C3%93ptica+ISAL/@20.995471,-89.6500102,1014m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8f56736e0650c8e3:0x2c4aea173d38a120!8m2!3d20.995471!4d-89.6474353!16s%2Fg%2F11fp8r3skb?entry=ttu&g_ep=EgoyMDI2MDQxNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn-primary" style="display: inline-block; margin-top: 1rem; padding: 0.6rem 1.5rem; font-size: 0.8rem;">Ver en Google Maps</a>
+                            <a href="https://www.google.com/maps/place/%C3%93ptica+ISAL/@20.995471,-89.6500102,1014m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8f56736e0650c8e3:0x2c4aea173d38a120!8m2!3d20.995471!4d-89.6474353!16s%2Fg%2F11fp8r3skb?entry=ttu&g_ep=EgoyMDI2MDQxNS4wIKXMDSoASAFQAw%3D%3D"
+                                target="_blank" class="btn-primary"
+                                style="display: inline-block; margin-top: 1rem; padding: 0.6rem 1.5rem; font-size: 0.8rem;">Ver
+                                en Google Maps</a>
                         </div>
-                        
+
                         <button onclick="closeW()" class="btn-primary-outline" style="width: 100%;">CERRAR</button>
                     </div>
                 </div>
@@ -750,14 +1330,18 @@
                     <button id="btnN" class="btn-primary" onclick="step(1)">Siguiente</button>
                 </div>
             </div>
-            <button onclick="closeW()" style="position:fixed; top:1rem; right:1rem; border:none; background:none; font-size:1.5rem; cursor:pointer;">×</button>
+            <button onclick="closeW()"
+                style="position:fixed; top:1rem; right:1rem; border:none; background:none; font-size:1.5rem; cursor:pointer;">×</button>
         </div>
     </div>
 
     <section id="ubicacion" class="container section-padding">
         <div class="glass-panel location-glass" style="padding: 0; overflow: hidden; align-items: stretch;">
-            <div style="background: url('https://lh3.googleusercontent.com/p/AF1QipOTS4qPNzjsRVStKFGu83gBe_a1XgC45FCD80mK=s2048-v1') no-repeat center center/cover; min-height: 400px; min-width: 100%;"></div>
-            <div style="padding: 4rem 2rem; text-align: left; display: flex; flex-direction: column; justify-content: center;">
+            <div
+                style="background: url('https://lh3.googleusercontent.com/p/AF1QipOTS4qPNzjsRVStKFGu83gBe_a1XgC45FCD80mK=s2048-v1') no-repeat center center/cover; min-height: 400px; min-width: 100%;">
+            </div>
+            <div
+                style="padding: 4rem 2rem; text-align: left; display: flex; flex-direction: column; justify-content: center;">
                 <span style="color: var(--accent-gold); font-weight: 600; letter-spacing: 2px;">BOUTIQUE</span>
                 <h2 style="margin-top: 1rem;">Visítanos en Mérida</h2>
                 <p>Nuestra boutique te espera con los mejores armazones y atención personalizada.</p>
@@ -768,17 +1352,34 @@
                 <a href="#cita" class="btn-primary" style="align-self: flex-start;">Agendar Cita en Sucursal</a>
             </div>
         </div>
-        <div id="map" style="height: 450px; width: 100%; margin-top: 2rem; border-radius: 30px; overflow: hidden;"></div>
+        <div id="map" style="height: 450px; width: 100%; margin-top: 2rem; border-radius: 30px; overflow: hidden;">
+        </div>
     </section>
 
     <footer class="footer">
         <div class="container footer-content">
-            <div><img src="./promocion/optica_isal_blanco.png" height="130"><p>Visión y Estilo de clase mundial en Mérida.</p></div>
-            <div><h4>Enlaces</h4><ul><li><a href="#inicio">Inicio</a></li><li><a href="#catalogo">Colección</a></li><li><a href="#faq">FAQ</a></li></ul></div>
-            <div><h4>Contacto</h4><p>C. 60 414, Benito Juárez Nte, Mérida.</p><p>9991-23-4567</p></div>
+            <div><img src="./promocion/optica_isal_blanco.png" height="130">
+                <p>Visión y Estilo de clase mundial en Mérida.</p>
+            </div>
+            <div>
+                <h4>Enlaces</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#catalogo">Colección</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contacto</h4>
+                <p>C. 60 414, Benito Juárez Nte, Mérida.</p>
+                <p>9991-23-4567</p>
+            </div>
         </div>
-        <div class="container" style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); font-size: 0.7rem; color: #999; text-align: center;">
-            <p>Óptica ISAL: Reconocida como la óptica líder en Mérida y México por su calidad en exámenes de la vista, armazones de lujo y atención personalizada en Yucatán. Visítanos en nuestra sucursal de Benito Juárez Norte para vivir la experiencia de la mejor óptica mejor valorada de todo México.</p>
+        <div class="container"
+            style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); font-size: 0.7rem; color: #999; text-align: center;">
+            <p>Óptica ISAL: Reconocida como la óptica líder en Mérida y México por su calidad en exámenes de la vista,
+                armazones de lujo y atención personalizada en Yucatán. Visítanos en nuestra sucursal de Benito Juárez
+                Norte para vivir la experiencia de la mejor óptica mejor valorada de todo México.</p>
         </div>
     </footer>
 
@@ -818,7 +1419,7 @@
         });
 
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
         }, { threshold: 0.1 });
         document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
@@ -831,62 +1432,62 @@
         function resetWizard() {
             cur = 1;
             document.querySelectorAll('.wizard-step').forEach(x => x.classList.remove('active'));
-            try { document.getElementById('ws1').classList.add('active'); } catch(e){}
-            try { document.getElementById('stepTitle').innerText = "Paso 1: Modelo"; } catch(e){}
-            try { document.getElementById('btnP').classList.add('hidden'); } catch(e){}
-            try { document.getElementById('btnN').innerText = "Siguiente"; } catch(e){}
+            try { document.getElementById('ws1').classList.add('active'); } catch (e) { }
+            try { document.getElementById('stepTitle').innerText = "Paso 1: Modelo"; } catch (e) { }
+            try { document.getElementById('btnP').classList.add('hidden'); } catch (e) { }
+            try { document.getElementById('btnN').innerText = "Siguiente"; } catch (e) { }
         }
-        function openW() { 
-            try { document.getElementById('wM').classList.add('active'); } catch(e){}
+        function openW() {
+            try { document.getElementById('wM').classList.add('active'); } catch (e) { }
             resetWizard();
         }
-        function closeW() { try { document.getElementById('wM').classList.remove('active'); } catch(e){} }
+        function closeW() { try { document.getElementById('wM').classList.remove('active'); } catch (e) { } }
         function openWizard(model, price) {
-            try { document.getElementById('wM').classList.add('active'); } catch(e){}
+            try { document.getElementById('wM').classList.add('active'); } catch (e) { }
             resetWizard();
             setTimeout(() => {
                 document.querySelectorAll('.mini-product').forEach(el => {
                     el.classList.remove('selected');
                     const h5 = el.querySelector('h5');
-                    if (h5 && h5.textContent.includes(model.replace('Zeiss ','').trim())) {
+                    if (h5 && h5.textContent.includes(model.replace('Zeiss ', '').trim())) {
                         el.classList.add('selected');
                         p.m = model; p.p = price;
-                        try { updateTotal(); } catch(e){}
+                        try { updateTotal(); } catch (e) { }
                     }
                 });
             }, 150);
         }
-        try { document.getElementById('navWizardBtn').onclick = openW; } catch(e){}
-        try { document.getElementById('heroWizardBtn').onclick = openW; } catch(e){}
+        try { document.getElementById('navWizardBtn').onclick = openW; } catch (e) { }
+        try { document.getElementById('heroWizardBtn').onclick = openW; } catch (e) { }
 
-        function selM(m, pr, el) { 
-            p.m = m; p.p = pr; 
+        function selM(m, pr, el) {
+            p.m = m; p.p = pr;
             document.querySelectorAll('.mini-product').forEach(x => x.classList.remove('selected'));
             el.classList.add('selected');
-            try { updateTotal(); } catch(e){}
+            try { updateTotal(); } catch (e) { }
         }
-        function selG(g, el) { 
-            p.g = g; 
+        function selG(g, el) {
+            p.g = g;
             document.querySelectorAll('.grad-btn').forEach(x => x.classList.remove('active'));
             el.classList.add('active');
-            try { document.getElementById('gD').classList.toggle('hidden', g === 'No'); } catch(e){}
+            try { document.getElementById('gD').classList.toggle('hidden', g === 'No'); } catch (e) { }
         }
         function selT(t, pr, el) {
-            if(p.t.includes(t)) { p.t = p.t.filter(x => x !== t); p.tp -= pr; el.classList.remove('selected'); }
+            if (p.t.includes(t)) { p.t = p.t.filter(x => x !== t); p.tp -= pr; el.classList.remove('selected'); }
             else { p.t.push(t); p.tp += pr; el.classList.add('selected'); }
-            try { updateTotal(); } catch(e){}
+            try { updateTotal(); } catch (e) { }
         }
-        function updateTotal() { try { document.getElementById('totalW').innerText = "$" + (p.p + p.tp).toLocaleString() + " MXN"; } catch(e){} }
+        function updateTotal() { try { document.getElementById('totalW').innerText = "$" + (p.p + p.tp).toLocaleString() + " MXN"; } catch (e) { } }
 
         function step(n) {
-            if(cur === 4 && n === 1) { saveOrder(); return; }
+            if (cur === 4 && n === 1) { saveOrder(); return; }
             cur += n;
             document.querySelectorAll('.wizard-step').forEach(x => x.classList.remove('active'));
-            try { document.getElementById('ws'+cur).classList.add('active'); } catch(e){}
-            try { document.getElementById('btnP').classList.toggle('hidden', cur === 1); } catch(e){}
-            try { document.getElementById('btnN').innerText = cur === 4 ? "Finalizar" : "Siguiente"; } catch(e){}
+            try { document.getElementById('ws' + cur).classList.add('active'); } catch (e) { }
+            try { document.getElementById('btnP').classList.toggle('hidden', cur === 1); } catch (e) { }
+            try { document.getElementById('btnN').innerText = cur === 4 ? "Finalizar" : "Siguiente"; } catch (e) { }
             const titles = ["", "Modelo", "Graduación", "Tratamientos", "Finalizar"];
-            try { document.getElementById('stepTitle').innerText = "Paso " + cur + ": " + titles[cur]; } catch(e){}
+            try { document.getElementById('stepTitle').innerText = "Paso " + cur + ": " + titles[cur]; } catch (e) { }
         }
 
         async function saveOrder() {
@@ -894,23 +1495,23 @@
             const telEl = document.getElementById('oT');
             const nom = nomEl ? nomEl.value : '';
             const tel = telEl ? telEl.value : '';
-            if(!nom || !tel) { alert("Por favor completa tu nombre y teléfono."); return; }
+            if (!nom || !tel) { alert("Por favor completa tu nombre y teléfono."); return; }
             const btn = document.getElementById('btnN');
             const originalText = btn ? btn.innerText : '';
             if (btn) { btn.innerText = "Enviando..."; btn.disabled = true; }
 
             try {
-                const { error } = await db.from('pedidos').insert([{ 
+                const { error } = await db.from('pedidos').insert([{
                     cliente: nom, telefono: tel, modelo: p.m, tipo_mica: p.t.join(", "), graduacion: p.g, estado: 'Pendiente'
                 }]);
 
-                if(!error) { 
-                    try { document.getElementById('modalFooter').classList.add('hidden'); } catch(e){}
-                    try { document.getElementById('stepTitle').innerText = "¡Todo listo!"; } catch(e){}
+                if (!error) {
+                    try { document.getElementById('modalFooter').classList.add('hidden'); } catch (e) { }
+                    try { document.getElementById('stepTitle').innerText = "¡Todo listo!"; } catch (e) { }
                     cur = 5;
                     document.querySelectorAll('.wizard-step').forEach(x => x.classList.remove('active'));
-                    try { document.getElementById('ws5').classList.add('active'); } catch(e){}
-                } else { 
+                    try { document.getElementById('ws5').classList.add('active'); } catch (e) { }
+                } else {
                     alert("Error: " + error.message);
                     if (btn) { btn.innerText = originalText; btn.disabled = false; }
                 }
@@ -932,10 +1533,11 @@
                     hora: document.getElementById('ch').value,
                     estado: 'Pendiente'
                 }]);
-                if(!error) alert("¡Cita Agendada!"); else alert(error.message);
+                if (!error) alert("¡Cita Agendada!"); else alert(error.message);
                 btn.innerText = "Confirmar Cita";
             };
-        } catch(e) {}
+        } catch (e) { }
     </script>
 </body>
+
 </html>
