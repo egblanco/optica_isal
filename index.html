@@ -776,8 +776,7 @@
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#catalogo">Colección</a></li>
                 <li><a href="#cita">Citas</a></li>
-                <li><button id="navWizardBtn" class="btn-primary" style="padding: 0.5rem 1.5rem;">Pedir Lente</button>
-                </li>
+
             </ul>
         </div>
     </nav>
@@ -789,8 +788,8 @@
             <p class="fade-up">Descubre por qué somos la óptica mejor valorada. En Óptica Isal, combinamos tecnología de
                 vanguardia con los armazones de diseño más exclusivos del país.</p>
             <div class="hero-buttons fade-up">
-                <button id="heroWizardBtn" class="btn-primary">Pedir Lente</button>
-                <a href="#catalogo" class="btn-primary-outline">Ver Catálogo</a>
+                <a href="#catalogo" class="btn-primary">Ver Catálogo</a>
+                <a href="#cita" class="btn-primary-outline">Agendar Cita</a>
             </div>
         </div>
     </header>
@@ -810,8 +809,7 @@
                 <div class="product-info">
                     <h3>Zeiss ZS24550 N</h3>
                     <p>Diseño rectangular en acabado Matte Black sofisticado.</p>
-                    <div class="product-bottom"><span class="price">$2,255 MXN</span><button class="btn-primary"
-                            style="padding: 0.4rem 1rem;" onclick="openWizard('Zeiss ZS24550',2255)">Ver</button></div>
+                    <div class="product-bottom"><span class="price">$2,255 MXN</span></div>
                 </div>
             </div>
             <div class="product-card fade-up" style="transition-delay: 0.1s;">
@@ -821,8 +819,7 @@
                 <div class="product-info">
                     <h3>Zeiss ZS25553</h3>
                     <p>Colección de lujo en acetato italiano pulido.</p>
-                    <div class="product-bottom"><span class="price">$2,583 MXN</span><button class="btn-primary"
-                            style="padding: 0.4rem 1rem;" onclick="openWizard('Zeiss ZS25553',2583)">Ver</button></div>
+                    <div class="product-bottom"><span class="price">$2,583 MXN</span></div>
                 </div>
             </div>
             <div class="product-card fade-up" style="transition-delay: 0.2s;">
@@ -831,8 +828,7 @@
                 <div class="product-info">
                     <h3>Zeiss ZS25560</h3>
                     <p>Estilo cuadrado moderno con tecnología de ajuste Zeiss.</p>
-                    <div class="product-bottom"><span class="price">$3,021 MXN</span><button class="btn-primary"
-                            style="padding: 0.4rem 1rem;" onclick="openWizard('Zeiss ZS25560',3021)">Ver</button></div>
+                    <div class="product-bottom"><span class="price">$3,021 MXN</span></div>
                 </div>
             </div>
             <div class="product-card fade-up" style="transition-delay: 0.3s;">
@@ -841,8 +837,7 @@
                 <div class="product-info">
                     <h3>Zeiss ZS22524</h3>
                     <p>Serie Titanium: máxima ligereza y durabilidad extrema.</p>
-                    <div class="product-bottom"><span class="price">$3,687 MXN</span><button class="btn-primary"
-                            style="padding: 0.4rem 1rem;" onclick="openWizard('Zeiss ZS22524',3687)">Ver</button></div>
+                    <div class="product-bottom"><span class="price">$3,687 MXN</span></div>
                 </div>
             </div>
             <div class="product-card fade-up">
@@ -1234,106 +1229,7 @@
         </div>
     </section>
 
-    <!-- WIZARD -->
-    <!-- Modales de Asistente de Configuración -->
-    <div class="modal-overlay" id="wM">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Diseña tus Lentes</h3>
-                <p id="stepTitle">Paso 1: Armazón</p>
-            </div>
-            <div class="modal-body">
-                <!-- Paso 1: Selección de Armazón -->
-                <div class="wizard-step active" id="ws1">
-                    <div class="mini-catalog-grid">
-                        <div class="mini-product" onclick="selM('Zeiss ZS24550', 2255, this)">
-                            <img src="./lentes/zeiss_zs24550.jpg" alt="ZS24550">
-                            <h5>Zeiss ZS24550</h5>
-                        </div>
-                        <div class="mini-product" onclick="selM('Zeiss ZS25553', 2583, this)">
-                            <img src="./lentes/zeiss_zs25553.jpg" alt="ZS25553">
-                            <h5>Zeiss ZS25553</h5>
-                        </div>
-                        <div class="mini-product" onclick="selM('Zeiss ZS25560', 3021, this)">
-                            <img src="./lentes/zeiss_zs25560.jpg" alt="ZS25560">
-                            <h5>Zeiss ZS25560</h5>
-                        </div>
-                        <div class="mini-product" onclick="selM('Zeiss ZS22524', 3687, this)">
-                            <img src="./lentes/zeiss_zs22524.jpg" alt="ZS22524">
-                            <h5>Zeiss ZS22524</h5>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Paso 2: Graduación -->
-                <div class="wizard-step" id="ws2">
-                    <h4>Graduación</h4>
-                    <div class="graduacion-options">
-                        <div class="grad-btn" onclick="selG('Si', this)">Sí, tengo receta</div>
-                        <div class="grad-btn" onclick="selG('No', this)">No, necesito examen</div>
-                    </div>
-                    <textarea id="gD" placeholder="Notas sobre tu graduación..." class="hidden"></textarea>
-                </div>
-
-                <!-- Paso 3: Tratamientos -->
-                <div class="wizard-step" id="ws3">
-                    <h4>Tratamientos Especiales</h4>
-                    <div class="tech-grid">
-                        <div class="tech-card" onclick="selT('Anti Blue', 500, this)">
-                            <h5>ZEISS BlueGuard</h5>
-                        </div>
-                        <div class="tech-card" onclick="selT('Fotocromatico', 1200, this)">
-                            <h5>PhotoFusion X</h5>
-                        </div>
-                        <div class="tech-card" onclick="selT('DriveSafe', 1500, this)">
-                            <h5>ZEISS DriveSafe</h5>
-                        </div>
-                        <div class="tech-card" onclick="selT('UV Protect', 300, this)">
-                            <h5>Protección UV 400</h5>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Paso 4: Datos finales -->
-                <div class="wizard-step" id="ws4">
-                    <h4>Finalizar Pedido</h4>
-                    <div class="form-group"><input type="text" id="oN" placeholder="Tu Nombre Completo"></div>
-                    <div class="form-group"><input type="tel" id="oT" placeholder="WhatsApp / Teléfono"></div>
-                </div>
-
-                <!-- Paso 5: Éxito y Ubicación -->
-                <div class="wizard-step" id="ws5">
-                    <div style="text-align: center; padding: 1rem 0;">
-                        <div style="font-size: 3rem; color: #10b981; margin-bottom: 1rem;">✓</div>
-                        <h2 style="margin-bottom: 1rem;">¡Pedido Recibido!</h2>
-                        <p style="color: var(--text-secondary); margin-bottom: 2rem;">Gracias por confiar en Óptica
-                            Isal. Te esperamos en nuestra sucursal para finalizar tu proceso:</p>
-
-                        <div
-                            style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 20px; border: 1px solid var(--border-color); margin-bottom: 2rem;">
-                            <h4 style="margin-bottom: 0.5rem;">Óptica ISAL</h4>
-                            <p style="font-size: 0.9rem;">C. 60 414, Benito Juárez Nte, 97119 Mérida, Yuc.</p>
-                            <a href="https://www.google.com/maps/place/%C3%93ptica+ISAL/@20.995471,-89.6500102,1014m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8f56736e0650c8e3:0x2c4aea173d38a120!8m2!3d20.995471!4d-89.6474353!16s%2Fg%2F11fp8r3skb?entry=ttu&g_ep=EgoyMDI2MDQxNS4wIKXMDSoASAFQAw%3D%3D"
-                                target="_blank" class="btn-primary"
-                                style="display: inline-block; margin-top: 1rem; padding: 0.6rem 1.5rem; font-size: 0.8rem;">Ver
-                                en Google Maps</a>
-                        </div>
-
-                        <button onclick="closeW()" class="btn-primary-outline" style="width: 100%;">CERRAR</button>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer" id="modalFooter">
-                <div><span>Total Estimado:</span><br><strong id="totalW">$0 MXN</strong></div>
-                <div style="display:flex; gap:1rem;">
-                    <button id="btnP" class="btn-primary-outline hidden" onclick="step(-1)">Anterior</button>
-                    <button id="btnN" class="btn-primary" onclick="step(1)">Siguiente</button>
-                </div>
-            </div>
-            <button onclick="closeW()"
-                style="position:fixed; top:1rem; right:1rem; border:none; background:none; font-size:1.5rem; cursor:pointer;">×</button>
-        </div>
-    </div>
 
     <section id="ubicacion" class="container section-padding">
         <div class="glass-panel location-glass" style="padding: 0; overflow: hidden; align-items: stretch;">
@@ -1427,101 +1323,7 @@
 
         // Cleaned Biometric logic
 
-        // Wizard Logic (preserved from original file)
-        let cur = 1;
-        let p = { m: "", p: 0, g: "", t: [], tp: 0 };
-
-        function resetWizard() {
-            cur = 1;
-            document.querySelectorAll('.wizard-step').forEach(x => x.classList.remove('active'));
-            try { document.getElementById('ws1').classList.add('active'); } catch (e) { }
-            try { document.getElementById('stepTitle').innerText = "Paso 1: Modelo"; } catch (e) { }
-            try { document.getElementById('btnP').classList.add('hidden'); } catch (e) { }
-            try { document.getElementById('btnN').innerText = "Siguiente"; } catch (e) { }
-        }
-        function openW() {
-            try { document.getElementById('wM').classList.add('active'); } catch (e) { }
-            resetWizard();
-        }
-        function closeW() { try { document.getElementById('wM').classList.remove('active'); } catch (e) { } }
-        function openWizard(model, price) {
-            try { document.getElementById('wM').classList.add('active'); } catch (e) { }
-            resetWizard();
-            setTimeout(() => {
-                document.querySelectorAll('.mini-product').forEach(el => {
-                    el.classList.remove('selected');
-                    const h5 = el.querySelector('h5');
-                    if (h5 && h5.textContent.includes(model.replace('Zeiss ', '').trim())) {
-                        el.classList.add('selected');
-                        p.m = model; p.p = price;
-                        try { updateTotal(); } catch (e) { }
-                    }
-                });
-            }, 150);
-        }
-        try { document.getElementById('navWizardBtn').onclick = openW; } catch (e) { }
-        try { document.getElementById('heroWizardBtn').onclick = openW; } catch (e) { }
-
-        function selM(m, pr, el) {
-            p.m = m; p.p = pr;
-            document.querySelectorAll('.mini-product').forEach(x => x.classList.remove('selected'));
-            el.classList.add('selected');
-            try { updateTotal(); } catch (e) { }
-        }
-        function selG(g, el) {
-            p.g = g;
-            document.querySelectorAll('.grad-btn').forEach(x => x.classList.remove('active'));
-            el.classList.add('active');
-            try { document.getElementById('gD').classList.toggle('hidden', g === 'No'); } catch (e) { }
-        }
-        function selT(t, pr, el) {
-            if (p.t.includes(t)) { p.t = p.t.filter(x => x !== t); p.tp -= pr; el.classList.remove('selected'); }
-            else { p.t.push(t); p.tp += pr; el.classList.add('selected'); }
-            try { updateTotal(); } catch (e) { }
-        }
-        function updateTotal() { try { document.getElementById('totalW').innerText = "$" + (p.p + p.tp).toLocaleString() + " MXN"; } catch (e) { } }
-
-        function step(n) {
-            if (cur === 4 && n === 1) { saveOrder(); return; }
-            cur += n;
-            document.querySelectorAll('.wizard-step').forEach(x => x.classList.remove('active'));
-            try { document.getElementById('ws' + cur).classList.add('active'); } catch (e) { }
-            try { document.getElementById('btnP').classList.toggle('hidden', cur === 1); } catch (e) { }
-            try { document.getElementById('btnN').innerText = cur === 4 ? "Finalizar" : "Siguiente"; } catch (e) { }
-            const titles = ["", "Modelo", "Graduación", "Tratamientos", "Finalizar"];
-            try { document.getElementById('stepTitle').innerText = "Paso " + cur + ": " + titles[cur]; } catch (e) { }
-        }
-
-        async function saveOrder() {
-            const nomEl = document.getElementById('oN');
-            const telEl = document.getElementById('oT');
-            const nom = nomEl ? nomEl.value : '';
-            const tel = telEl ? telEl.value : '';
-            if (!nom || !tel) { alert("Por favor completa tu nombre y teléfono."); return; }
-            const btn = document.getElementById('btnN');
-            const originalText = btn ? btn.innerText : '';
-            if (btn) { btn.innerText = "Enviando..."; btn.disabled = true; }
-
-            try {
-                const { error } = await db.from('pedidos').insert([{
-                    cliente: nom, telefono: tel, modelo: p.m, tipo_mica: p.t.join(", "), graduacion: p.g, estado: 'Pendiente'
-                }]);
-
-                if (!error) {
-                    try { document.getElementById('modalFooter').classList.add('hidden'); } catch (e) { }
-                    try { document.getElementById('stepTitle').innerText = "¡Todo listo!"; } catch (e) { }
-                    cur = 5;
-                    document.querySelectorAll('.wizard-step').forEach(x => x.classList.remove('active'));
-                    try { document.getElementById('ws5').classList.add('active'); } catch (e) { }
-                } else {
-                    alert("Error: " + error.message);
-                    if (btn) { btn.innerText = originalText; btn.disabled = false; }
-                }
-            } catch (err) {
-                alert('Error al conectar con la base de datos.');
-                if (btn) { btn.innerText = originalText; btn.disabled = false; }
-            }
-        }
+        // Wizard logic removed
 
         try {
             document.getElementById('fCita').onsubmit = async (e) => {
